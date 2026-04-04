@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>BonAcheter — Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="phone">
+    <div class="status-bar"></div>
+
+    <!-- Screen: Landing -->
+    <div id="screen-landing" class="screen active">
+      <div class="screen-content landing-content">
+        <h1 class="logo">BonAcheter</h1>
+        <p class="subtitle">Liste partagée, budget et taxes Québec.<br>Montérégie, CMM.</p>
+        <a href="#screen-lang" class="btn btn-primary block">Commencer</a>
+        <a href="#screen-dashboard" class="btn btn-secondary block">J'ai déjà un compte</a>
+      </div>
+    </div>
+
+    <!-- Screen: Dashboard -->
+    <div id="screen-dashboard" class="screen">
+      <header class="header">
+        <h2>Tableau de bord</h2>
+      </header>
+      <div class="screen-content dashboard-content">
+        <div class="dashboard-summary">
+          <p class="label">Budget période</p>
+          <p class="budget-big">80 $ <span>restants / 200 $</span></p>
+          <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
+        </div>
+        <a href="#screen-list" class="dashboard-card">Ma liste <span class="arrow">→</span></a>
+        <a href="#screen-budget" class="dashboard-card">Budget <span class="arrow">→</span></a>
+        <a href="#screen-record" class="dashboard-card">
+          Dernière course <span class="arrow">→</span>
+          <span class="card-meta">IGA — 45,20 $</span>
+        </a>
+        <a href="#screen-settings" class="dashboard-card">Paramètres <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Screen: Onboarding Langue -->
+    <div id="screen-lang" class="screen">
+      <div class="screen-content">
+        <h1 class="logo">BonAcheter</h1>
+        <p class="subtitle">Choisissez votre langue</p>
+        <div class="btn-group">
+          <a href="#screen-household" class="btn btn-primary">Français</a>
+          <a href="#screen-household" class="btn btn-secondary">English</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen: Créer / Rejoindre foyer -->
+    <div id="screen-household" class="screen">
+      <header class="header">
+        <a href="#screen-lang" class="back">←</a>
+        <h2>Foyer</h2>
+      </header>
+      <div class="screen-content">
+        <a href="#screen-region" class="btn btn-primary block">Créer un foyer</a>
+        <p class="or">ou</p>
+        <input type="text" class="input" placeholder="Code d'invitation" aria-label="Code d'invitation">
+        <a href="#screen-region" class="btn btn-secondary block">Rejoindre</a>
+      </div>
+    </div>
+
+    <!-- Screen: Région -->
+    <div id="screen-region" class="screen">
+      <header class="header">
+        <a href="#screen-household" class="back">←</a>
+        <h2>Région d'achat</h2>
+      </header>
+      <div class="screen-content">
+        <p class="label">Pays / Province</p>
+        <p class="value">Canada — Québec</p>
+        <p class="label">Région(s)</p>
+        <label class="checkbox"><input type="checkbox" checked> Montérégie</label>
+        <label class="checkbox"><input type="checkbox" checked> CMM</label>
+        <p class="label">Ville</p>
+        <select class="input">
+          <option>Longueuil</option>
+          <option>Saint-Jean-sur-Richelieu</option>
+          <option>Montréal</option>
+        </select>
+        <a href="#screen-dashboard" class="btn btn-primary block">Continuer</a>
+      </div>
+    </div>
+
+    <!-- Screen: Liste principale -->
+    <div id="screen-list" class="screen">
+      <header class="header">
+        <h2>Ma liste</h2>
+        <a href="#screen-dashboard" class="icon-home" aria-label="Accueil">⌂</a>
+        <a href="#screen-settings" class="icon" aria-label="Paramètres">⚙</a>
+      </header>
+      <div class="budget-bar">
+        <span>Budget</span>
+        <span class="budget-value">120 $ / 200 $</span>
+        <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
+        <span class="period">Bi-hebdo</span>
+      </div>
+      <div class="screen-content list-content">
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Lait 2%</span><span class="item-meta">1 L · 0% tax</span></li>
+          <li class="item"><span class="item-name">Pain brun</span><span class="item-meta">1 · 0% tax</span></li>
+          <li class="item"><span class="item-name">Yogourt</span><span class="item-meta">2 · 14,98% tax</span></li>
+        </ul>
+        <a href="#screen-add-item" class="btn btn-primary block">+ Ajouter un article</a>
+        <a href="#screen-record" class="btn btn-secondary block">J'ai fait les courses</a>
+      </div>
+    </div>
+
+    <!-- Screen: Ajouter article -->
+    <div id="screen-add-item" class="screen">
+      <header class="header">
+        <a href="#screen-list" class="back">←</a>
+        <h2>Nouvel article</h2>
+      </header>
+      <div class="screen-content form">
+        <label class="label">Nom</label>
+        <input type="text" class="input" placeholder="ex. Lait 2%">
+        <label class="label">Quantité / Unité</label>
+        <div class="row">
+          <input type="number" class="input" value="1" style="width:4rem">
+          <input type="text" class="input" placeholder="L, kg, pièce" style="flex:1">
+        </div>
+        <label class="label">Taxe</label>
+        <div class="btn-group small">
+          <button type="button" class="btn btn-secondary active">0% (alimentaire)</button>
+          <button type="button" class="btn btn-secondary">14,98% (taxable)</button>
+        </div>
+        <a href="#screen-scanner" class="btn btn-outline block">📷 Scanner code-barres</a>
+        <a href="#screen-list" class="btn btn-primary block">Enregistrer</a>
+      </div>
+    </div>
+
+    <!-- Screen: Scanner (mock) -->
+    <div id="screen-scanner" class="screen">
+      <header class="header">
+        <a href="#screen-add-item" class="back">←</a>
+        <h2>Scanner</h2>
+      </header>
+      <div class="scanner-area">
+        <div class="scanner-placeholder">Vue caméra (mock)<br>Code-barres / QR</div>
+        <a href="#screen-add-item" class="btn btn-primary">Simuler un scan réussi</a>
+      </div>
+    </div>
+
+    <!-- Screen: Budget -->
+    <div id="screen-budget" class="screen">
+      <header class="header">
+        <a href="#screen-dashboard" class="back">←</a>
+        <h2>Budget</h2>
+      </header>
+      <div class="screen-content form">
+        <label class="label">Période</label>
+        <div class="btn-group small">
+          <button type="button" class="btn btn-primary active">Bi-hebdo</button>
+          <button type="button" class="btn btn-secondary">Mensuel</button>
+        </div>
+        <label class="label">Montant (CAD)</label>
+        <input type="number" class="input" value="200" placeholder="200">
+        <p class="muted">Solde actuel : 80 $ restants</p>
+        <a href="#screen-dashboard" class="btn btn-primary block">Enregistrer</a>
+      </div>
+    </div>
+
+    <!-- Screen: Enregistrer une course -->
+    <div id="screen-record" class="screen">
+      <header class="header">
+        <a href="#screen-dashboard" class="back">←</a>
+        <h2>Enregistrer la course</h2>
+      </header>
+      <div class="screen-content form">
+        <input type="text" class="input" placeholder="Magasin (ex. IGA, Maxi)">
+        <div class="purchase-items">
+          <label class="checkbox row">
+            <input type="checkbox">
+            <span>Lait 2%</span>
+            <input type="text" class="input price" placeholder="Prix $" style="width:5rem">
+          </label>
+          <label class="checkbox row">
+            <input type="checkbox">
+            <span>Pain brun</span>
+            <input type="text" class="input price" placeholder="Prix $" style="width:5rem">
+          </label>
+          <label class="checkbox row">
+            <input type="checkbox" checked>
+            <span>Yogourt</span>
+            <input type="text" class="input price" value="4.99" style="width:5rem">
+          </label>
+        </div>
+        <div class="totals">
+          <p>Sous-total <span>4,99 $</span></p>
+          <p>Taxes <span>0,75 $</span></p>
+          <p class="total">Total <span>5,74 $</span></p>
+        </div>
+        <a href="#screen-dashboard" class="btn btn-primary block">Enregistrer la course</a>
+      </div>
+    </div>
+
+    <!-- Screen: Paramètres -->
+    <div id="screen-settings" class="screen">
+      <header class="header">
+        <a href="#screen-dashboard" class="back">←</a>
+        <h2>Paramètres</h2>
+      </header>
+      <div class="screen-content form">
+        <p class="label">Région(s) d'achat</p>
+        <p class="value">Montérégie, CMM — Longueuil</p>
+        <p class="label">Langue</p>
+        <select class="input"><option>Français</option><option>English</option></select>
+        <p class="label">Foyer</p>
+        <a href="#" class="btn btn-outline block">Inviter des membres</a>
+        <a href="#screen-landing" class="btn btn-secondary block">Déconnexion</a>
+      </div>
+    </div>
+
+    <!-- Nav: from list to budget (link in budget bar would go to #screen-budget) -->
+  </div>
+
+  <p class="prototype-note">Prototype BonAcheter — naviguez par les liens. Ouvrez <code>index.html</code> dans un navigateur. Taille mobile recommandée (375px).</p>
+
+      <script>
+    (function() {
+      var hash = window.location.hash || '#screen-landing';
+      function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+        var el = document.getElementById(id);
+        if (el) el.classList.add('active');
+      }
+      window.addEventListener('hashchange', function() { showScreen(window.location.hash.slice(1)); });
+      showScreen(hash.slice(1));
+      var budgetBar = document.querySelector('.budget-bar');
+      if (budgetBar) budgetBar.addEventListener('click', function() { window.location.hash = '#screen-budget'; });
+    })();
+  </script>
+</body>
+</html>

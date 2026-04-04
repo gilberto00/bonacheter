@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <rect width="375" height="812" fill="#fff" stroke="#ccc"/>
+  <g id="status-bar"><rect x="0" y="0" width="375" height="44" fill="#f5f5f5" stroke="#ddd"/></g>
+  <g id="header">
+    <rect x="0" y="44" width="375" height="56" fill="#fafafa" stroke="#ddd"/>
+    <text x="24" y="80" font-family="system-ui,sans-serif" font-size="16" fill="#333">�</text>
+    <text x="187" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#333">Nouvel article</text>
+  </g>
+  <g id="form">
+    <text x="24" y="130" font-family="system-ui,sans-serif" font-size="12" fill="#999">Nom</text>
+    <rect x="24" y="138" width="327" height="48" rx="8" fill="none" stroke="#ddd"/>
+    <text x="40" y="168" font-family="system-ui,sans-serif" font-size="14" fill="#999">ex. Lait 2%</text>
+    <text x="24" y="218" font-family="system-ui,sans-serif" font-size="12" fill="#999">Quantit� / Unit�</text>
+    <rect x="24" y="226" width="80" height="48" rx="8" fill="none" stroke="#ddd"/>
+    <text x="40" y="256" font-family="system-ui,sans-serif" font-size="14" fill="#333">1</text>
+    <rect x="116" y="226" width="235" height="48" rx="8" fill="none" stroke="#ddd"/>
+    <text x="132" y="256" font-family="system-ui,sans-serif" font-size="14" fill="#999">L, kg, pi�ce</text>
+    <text x="24" y="296" font-family="system-ui,sans-serif" font-size="12" fill="#999">Taxe</text>
+    <rect x="24" y="306" width="160" height="40" rx="8" fill="none" stroke="#333"/>
+    <text x="104" y="331" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#333">0% (alimentaire)</text>
+    <rect x="191" y="306" width="160" height="40" rx="8" fill="none" stroke="#ddd"/>
+    <text x="271" y="331" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#666">14,98% (taxable)</text>
+    <rect x="24" y="366" width="327" height="48" rx="8" fill="none" stroke="#999"/>
+    <text x="187" y="396" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#666">=� Scanner code-barres</text>
+    <rect x="24" y="430" width="327" height="52" rx="12" fill="none" stroke="#333"/>
+    <text x="187" y="463" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#333">Enregistrer</text>
+  </g>
+</svg>

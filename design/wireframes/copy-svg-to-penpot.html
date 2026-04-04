@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copier les SVG vers Penpot — BonAcheter</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 1.25rem; }
+    p { color: #666; font-size: 0.875rem; margin-bottom: 24px; }
+    .screen { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 12px; border: 1px solid #eee; border-radius: 8px; }
+    .screen label { flex: 1; font-weight: 500; }
+    .screen button { padding: 8px 14px; background: #0d5c2e; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .screen button:hover { opacity: 0.9; }
+    .screen button.copied { background: #333; }
+    .note { margin-top: 24px; padding: 12px; background: #f0f7f2; border-radius: 8px; font-size: 0.8125rem; }
+  </style>
+</head>
+<body>
+  <h1>Copier les wireframes SVG pour Penpot</h1>
+  <p>Ouvrez cette page dans <strong>Chrome</strong>. Pour chaque écran, cliquez sur « Copier le SVG », puis dans Penpot (frame 375×812 sélectionné) faites <strong>Ctrl+V</strong> (ou Cmd+V). Le SVG est collé en vecteurs.</p>
+  <div id="list"></div>
+  <div class="note">
+    <strong>Si « Copier » ne fait rien</strong> : ouvrez ce dossier dans un serveur local (ex. <code>python3 -m http.server 8080</code> dans ce dossier, puis <code>http://localhost:8080/copy-svg-to-penpot.html</code>). Sinon, ouvrez chaque fichier .svg dans un onglet, Ctrl+A puis Ctrl+C, et collez dans Penpot.
+  </div>
+  <script>
+    var screens = [
+      { file: '01-landing.svg', name: '1. Landing (page d\'accueil)' },
+      { file: '02-dashboard.svg', name: 'Dashboard' },
+      { file: '03-onboarding-langue.svg', name: 'Onboarding — Langue' },
+      { file: '04-onboarding-foyer.svg', name: 'Onboarding — Foyer' },
+      { file: '05-onboarding-region.svg', name: 'Onboarding — Région' },
+      { file: '06-liste.svg', name: 'Liste' },
+      { file: '07-ajouter-article.svg', name: 'Ajouter article' },
+      { file: '08-scanner.svg', name: 'Scanner' },
+      { file: '09-budget.svg', name: 'Budget' },
+      { file: '10-enregistrer-course.svg', name: 'Enregistrer course' },
+      { file: '11-parametres.svg', name: 'Paramètres' }
+    ];
+    var list = document.getElementById('list');
+    screens.forEach(function (s) {
+      var div = document.createElement('div');
+      div.className = 'screen';
+      div.innerHTML = '<label>' + s.name + '</label><button type="button" data-file="' + s.file + '">Copier le SVG</button>';
+      list.appendChild(div);
+    });
+    list.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-file]');
+      if (!btn) return;
+      var file = btn.getAttribute('data-file');
+      fetch(file)
+        .then(function (r) { return r.text(); })
+        .then(function (svgText) {
+          return navigator.clipboard.writeText(svgText);
+        })
+        .then(function () {
+          var old = btn.textContent;
+          btn.textContent = 'Copié';
+          btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 2000);
+        })
+        .catch(function (err) {
+          alert('Impossible de charger \"' + file + '\". Ouvrez cette page via un serveur local (voir la note en bas) ou copiez le fichier .svg à la main.');
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001 /* BonAcheterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000001 /* BonAcheterApp.swift */; };
+		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* ContentView.swift */; };
+		A1000003 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* Theme.swift */; };
+		A1000004 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000004 /* LandingView.swift */; };
+		A1000005 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000005 /* OnboardingContainerView.swift */; };
+		A1000006 /* LanguageOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000006 /* LanguageOnboardingView.swift */; };
+		A1000007 /* HouseholdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000007 /* HouseholdOnboardingView.swift */; };
+		A1000008 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000008 /* RegionView.swift */; };
+		A1000009 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000009 /* DashboardView.swift */; };
+		A1000010 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* ListView.swift */; };
+		A1000011 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* AddItemView.swift */; };
+		A1000012 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000012 /* ScannerView.swift */; };
+		A1000013 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000013 /* BudgetView.swift */; };
+		A1000014 /* RecordPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000014 /* RecordPurchaseView.swift */; };
+		A1000015 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000015 /* SettingsView.swift */; };
+		A1000016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1000016 /* Assets.xcassets */; };
+		A1000017 /* ItemPriceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000017 /* ItemPriceHistoryView.swift */; };
+		A1000018 /* AppLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000018 /* AppLocalization.swift */; };
+		A1000019 /* GroceryMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000019 /* GroceryMeasurement.swift */; };
+		A1000020 /* OpenFoodFactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000020 /* OpenFoodFactsClient.swift */; };
+		A1000021 /* ListSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000021 /* ListSyncService.swift */; };
+		A1000022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000022 /* LoginView.swift */; };
+		A1000101 /* BonAcheterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000101 /* BonAcheterTests.swift */; };
+		A1000023 /* UIAccessibilityID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000023 /* UIAccessibilityID.swift */; };
+		A1000024 /* LocalCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000024 /* LocalCredentialStore.swift */; };
+		A1000025 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000025 /* SignUpView.swift */; };
+		A1000026 /* EmailVerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000026 /* EmailVerificationService.swift */; };
+		A1000027 /* PasskeyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000027 /* PasskeyConfiguration.swift */; };
+		A1000028 /* PasskeyCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000028 /* PasskeyCredentialStore.swift */; };
+		A1000029 /* PasskeyAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000029 /* PasskeyAuthCoordinator.swift */; };
+		A1000030 /* MailComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000030 /* MailComposeView.swift */; };
+		A1000201 /* BonAcheterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000201 /* BonAcheterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B1000000 /* BonAcheter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonAcheter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000001 /* BonAcheterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAcheterApp.swift; sourceTree = "<group>"; };
+		B1000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B1000003 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B1000004 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		B1000005 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		B1000006 /* LanguageOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageOnboardingView.swift; sourceTree = "<group>"; };
+		B1000007 /* HouseholdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseholdOnboardingView.swift; sourceTree = "<group>"; };
+		B1000008 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
+		B1000009 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B1000010 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		B1000011 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		B1000012 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		B1000013 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
+		B1000014 /* RecordPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPurchaseView.swift; sourceTree = "<group>"; };
+		B1000015 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B1000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1000017 /* ItemPriceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceHistoryView.swift; sourceTree = "<group>"; };
+		B1000018 /* AppLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalization.swift; sourceTree = "<group>"; };
+		B1000019 /* GroceryMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryMeasurement.swift; sourceTree = "<group>"; };
+		B1000020 /* OpenFoodFactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsClient.swift; sourceTree = "<group>"; };
+		B1000021 /* ListSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSyncService.swift; sourceTree = "<group>"; };
+		B1000022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B1000100 /* BonAcheterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAcheterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000101 /* BonAcheterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAcheterTests.swift; sourceTree = "<group>"; };
+		B1000023 /* UIAccessibilityID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAccessibilityID.swift; sourceTree = "<group>"; };
+		B1000024 /* LocalCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredentialStore.swift; sourceTree = "<group>"; };
+		B1000025 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		B1000026 /* EmailVerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationService.swift; sourceTree = "<group>"; };
+		B1000027 /* PasskeyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyConfiguration.swift; sourceTree = "<group>"; };
+		B1000028 /* PasskeyCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyCredentialStore.swift; sourceTree = "<group>"; };
+		B1000029 /* PasskeyAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyAuthCoordinator.swift; sourceTree = "<group>"; };
+		B1000030 /* MailComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposeView.swift; sourceTree = "<group>"; };
+		B1000031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1000032 /* BonAcheter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonAcheter.entitlements; sourceTree = "<group>"; };
+		B1000200 /* BonAcheterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAcheterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000201 /* BonAcheterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAcheterUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1000000 = {
+			isa = PBXGroup;
+			children = (
+				D1000001 /* BonAcheter */,
+				D1000006 /* BonAcheterTests */,
+				D1000007 /* BonAcheterUITests */,
+				D1000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1000001 /* BonAcheter */ = {
+			isa = PBXGroup;
+			children = (
+				B1000001 /* BonAcheterApp.swift */,
+				B1000018 /* AppLocalization.swift */,
+				B1000019 /* GroceryMeasurement.swift */,
+				B1000002 /* ContentView.swift */,
+				B1000003 /* Theme.swift */,
+				B1000023 /* UIAccessibilityID.swift */,
+				B1000031 /* Info.plist */,
+				B1000032 /* BonAcheter.entitlements */,
+				D1000005 /* Services */,
+				D1000003 /* Views */,
+				B1000016 /* Assets.xcassets */,
+			);
+			path = BonAcheter;
+			sourceTree = "<group>";
+		};
+		D1000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1000000 /* BonAcheter.app */,
+				B1000100 /* BonAcheterTests.xctest */,
+				B1000200 /* BonAcheterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1000006 /* BonAcheterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1000101 /* BonAcheterTests.swift */,
+			);
+			path = BonAcheterTests;
+			sourceTree = "<group>";
+		};
+		D1000007 /* BonAcheterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B1000201 /* BonAcheterUITests.swift */,
+			);
+			path = BonAcheterUITests;
+			sourceTree = "<group>";
+		};
+		D1000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B1000020 /* OpenFoodFactsClient.swift */,
+				B1000021 /* ListSyncService.swift */,
+				B1000024 /* LocalCredentialStore.swift */,
+				B1000026 /* EmailVerificationService.swift */,
+				B1000027 /* PasskeyConfiguration.swift */,
+				B1000028 /* PasskeyCredentialStore.swift */,
+				B1000029 /* PasskeyAuthCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D1000003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1000004 /* LandingView.swift */,
+				B1000005 /* OnboardingContainerView.swift */,
+				D1000004 /* Onboarding */,
+				B1000009 /* DashboardView.swift */,
+				B1000010 /* ListView.swift */,
+				B1000011 /* AddItemView.swift */,
+				B1000012 /* ScannerView.swift */,
+				B1000013 /* BudgetView.swift */,
+				B1000014 /* RecordPurchaseView.swift */,
+				B1000015 /* SettingsView.swift */,
+				B1000022 /* LoginView.swift */,
+				B1000025 /* SignUpView.swift */,
+				B1000030 /* MailComposeView.swift */,
+				B1000017 /* ItemPriceHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D1000004 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B1000006 /* LanguageOnboardingView.swift */,
+				B1000007 /* HouseholdOnboardingView.swift */,
+				B1000008 /* RegionView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1000001 /* BonAcheter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1000003 /* Build configuration list for PBXNativeTarget "BonAcheter" */;
+			buildPhases = (
+				E1000002 /* Sources */,
+				C1000001 /* Frameworks */,
+				E1000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BonAcheter;
+			productName = BonAcheter;
+			productReference = B1000000 /* BonAcheter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1000005 /* BonAcheterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1000109 /* Build configuration list for PBXNativeTarget "BonAcheterTests" */;
+			buildPhases = (
+				E1000006 /* Sources */,
+				C1000002 /* Frameworks */,
+				E1000008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				R1000001 /* PBXTargetDependency */,
+			);
+			name = BonAcheterTests;
+			productName = BonAcheterTests;
+			productReference = B1000100 /* BonAcheterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1000010 /* BonAcheterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1000112 /* Build configuration list for PBXNativeTarget "BonAcheterUITests" */;
+			buildPhases = (
+				E1000011 /* Sources */,
+				C1000003 /* Frameworks */,
+				E1000013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				R1000003 /* PBXTargetDependency */,
+			);
+			name = BonAcheterUITests;
+			productName = BonAcheterUITests;
+			productReference = B1000200 /* BonAcheterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1000004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E1000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					E1000005 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E1000001;
+					};
+					E1000010 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E1000001;
+					};
+				};
+			};
+			buildConfigurationList = F1000001 /* Build configuration list for PBXProject "BonAcheter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = fr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = D1000000;
+			productRefGroup = D1000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1000001 /* BonAcheter */,
+				E1000005 /* BonAcheterTests */,
+				E1000010 /* BonAcheterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXContainerItemProxy section */
+		R1000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1000004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1000001;
+			remoteInfo = BonAcheter;
+		};
+		R1000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1000004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1000001;
+			remoteInfo = BonAcheter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		R1000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1000001 /* BonAcheter */;
+			targetProxy = R1000002 /* PBXContainerItemProxy */;
+		};
+		R1000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1000001 /* BonAcheter */;
+			targetProxy = R1000004 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* BonAcheterApp.swift in Sources */,
+				A1000018 /* AppLocalization.swift in Sources */,
+				A1000019 /* GroceryMeasurement.swift in Sources */,
+				A1000002 /* ContentView.swift in Sources */,
+				A1000003 /* Theme.swift in Sources */,
+				A1000004 /* LandingView.swift in Sources */,
+				A1000005 /* OnboardingContainerView.swift in Sources */,
+				A1000006 /* LanguageOnboardingView.swift in Sources */,
+				A1000007 /* HouseholdOnboardingView.swift in Sources */,
+				A1000008 /* RegionView.swift in Sources */,
+				A1000009 /* DashboardView.swift in Sources */,
+				A1000010 /* ListView.swift in Sources */,
+				A1000011 /* AddItemView.swift in Sources */,
+				A1000012 /* ScannerView.swift in Sources */,
+				A1000013 /* BudgetView.swift in Sources */,
+				A1000014 /* RecordPurchaseView.swift in Sources */,
+				A1000015 /* SettingsView.swift in Sources */,
+				A1000017 /* ItemPriceHistoryView.swift in Sources */,
+				A1000020 /* OpenFoodFactsClient.swift in Sources */,
+				A1000021 /* ListSyncService.swift in Sources */,
+				A1000024 /* LocalCredentialStore.swift in Sources */,
+				A1000026 /* EmailVerificationService.swift in Sources */,
+				A1000027 /* PasskeyConfiguration.swift in Sources */,
+				A1000028 /* PasskeyCredentialStore.swift in Sources */,
+				A1000029 /* PasskeyAuthCoordinator.swift in Sources */,
+				A1000022 /* LoginView.swift in Sources */,
+				A1000025 /* SignUpView.swift in Sources */,
+				A1000030 /* MailComposeView.swift in Sources */,
+				A1000023 /* UIAccessibilityID.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000101 /* BonAcheterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000201 /* BonAcheterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F1000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F1000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F1000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BonAcheter/BonAcheter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonAcheter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BonAcheter/BonAcheter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonAcheter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1000107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonAcheter.app/BonAcheter";
+			};
+			name = Debug;
+		};
+		F1000108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonAcheter.app/BonAcheter";
+			};
+			name = Release;
+		};
+		F1000110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BonAcheter;
+			};
+			name = Debug;
+		};
+		F1000111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bonacheter.app.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BonAcheter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1000001 /* Build configuration list for PBXProject "BonAcheter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1000002 /* Debug */,
+				F1000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1000003 /* Build configuration list for PBXNativeTarget "BonAcheter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1000005 /* Debug */,
+				F1000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1000109 /* Build configuration list for PBXNativeTarget "BonAcheterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1000107 /* Debug */,
+				F1000108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1000112 /* Build configuration list for PBXNativeTarget "BonAcheterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1000110 /* Debug */,
+				F1000111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1000004 /* Project object */;
+}

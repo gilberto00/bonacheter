@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <rect width="375" height="812" fill="#fff" stroke="#ccc"/>
+  <g id="status-bar"><rect x="0" y="0" width="375" height="44" fill="#1a1a1a"/></g>
+  <g id="header">
+    <rect x="0" y="44" width="375" height="56" fill="rgba(0,0,0,0.5)" stroke="#333"/>
+    <text x="24" y="80" font-family="system-ui,sans-serif" font-size="16" fill="#fff">�</text>
+    <text x="187" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#fff">Scanner</text>
+  </g>
+  <g id="camera-area">
+    <rect x="0" y="100" width="375" height="612" fill="#111"/>
+    <rect x="40" y="200" width="295" height="200" rx="8" fill="none" stroke="#666" stroke-dasharray="8 4"/>
+    <text x="187" y="450" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#666">Vue cam�ra  Code-barres / QR</text>
+  </g>
+  <g id="actions">
+    <rect x="24" y="740" width="327" height="52" rx="12" fill="#333"/>
+    <text x="187" y="773" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#fff">Simuler un scan r�ussi</text>
+  </g>
+</svg>
