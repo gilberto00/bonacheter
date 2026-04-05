@@ -24,7 +24,7 @@ Documentação sobre limites fiscais (GST/QST, modelo do app vs. varejo): [`docs
 ## Ficheiros
 
 - `index.html` — ecrãs e navegação por hash (`#screen-*`).
-- `styles.css` — mobile-first, tema verde (#0d5c2e).
+- `styles.css` — mobile-first, bleu Québec (#003da5).
 
 ## Especificações
 

@@ -5,5 +5,6 @@
 
 import SwiftUI
 
-let themePrimary = Color(red: 0.05, green: 0.36, blue: 0.18)
-let themePrimaryLight = Color(red: 0.91, green: 0.96, blue: 0.93)
+// Bleu du Québec (#003DA5) — identité visuelle régionale; fond clair assorti (#E8EEF7).
+let themePrimary = Color(red: 0, green: 61 / 255, blue: 165 / 255)
+let themePrimaryLight = Color(red: 232 / 255, green: 238 / 255, blue: 247 / 255)
