@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account & Data | BonAcheter</title>
+  <meta name="description" content="Informações públicas sobre conta, autenticação e tratamento de dados locais no BonAcheter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/brand/bonacheter-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="assets/brand/bonacheter-mark.svg" alt="Logo BonAcheter">
+        <span class="brand__text">
+          <span class="brand__title">BonAcheter</span>
+          <span class="brand__tag">Account & data</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal-layout">
+    <article class="legal-card">
+      <h1>Account & data</h1>
+      <p class="legal-meta">Explicação pública sobre conta local, autenticação e remoção de dados no MVP.</p>
+      <p>
+        O BonAcheter já inclui fluxos de criação de conta por e-mail, verificação de e-mail e passkeys. Ao mesmo tempo,
+        a documentação atual do projeto descreve o produto como um MVP com comportamento amplamente local ao dispositivo.
+      </p>
+
+      <h2>Como a conta funciona hoje</h2>
+      <ul>
+        <li>O utilizador pode criar conta com e-mail e senha.</li>
+        <li>A verificação de e-mail é feita por link aberto no próprio dispositivo.</li>
+        <li>Após verificação, o utilizador pode adicionar passkey suportada pelo ecossistema Apple.</li>
+        <li>As credenciais do MVP são tratadas localmente no dispositivo e no Keychain, conforme a implementação atual do projeto.</li>
+      </ul>
+
+      <h2>Como sair da conta</h2>
+      <p>
+        O app inclui ação de sign out nas definições. Essa ação remove a sessão local atual e devolve o utilizador à landing page.
+      </p>
+
+      <h2>Como apagar dados locais do MVP</h2>
+      <p>
+        Como a versão atual do app é descrita como local-first, a forma prática de limpar os dados locais é remover o app do dispositivo
+        e, se necessário, remover a credencial/passkey correspondente nas definições da Apple. Em futuras versões com backend público,
+        este fluxo poderá evoluir para um processo dedicado dentro do produto.
+      </p>
+
+      <h2>O que esta página comunica para App Store</h2>
+      <div class="note">
+        Esta página existe para documentar, publicamente, como o MVP trata conta e dados hoje. Ela complementa a
+        <a href="privacy.html">Privacy Policy</a> e a página de <a href="support.html">Support</a>.
+      </div>
+
+      <h2>Importante</h2>
+      <p>
+        Se o BonAcheter passar a armazenar contas ou dados em infraestrutura própria no futuro, esta página deverá ser atualizada
+        para refletir o novo fluxo de exclusão de conta/dados e o novo ciclo de vida das informações pessoais.
+      </p>
+
+      <div class="inline-links">
+        <a href="index.html">Voltar ao site</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

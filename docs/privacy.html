@@ -1,62 +1,110 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politique de confidentialité — BonAcheter</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
-    p, li { font-size: 0.95rem; }
-    footer { margin-top: 2rem; font-size: 0.85rem; color: #555; }
-  </style>
+  <title>Privacy Policy | BonAcheter</title>
+  <meta name="description" content="Política de privacidade pública do BonAcheter para GitHub Pages e App Store.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/brand/bonacheter-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Politique de confidentialité (BonAcheter)</h1>
-  <p><strong>Dernière mise à jour :</strong> 5 avril 2026</p>
-  <p>
-    BonAcheter (« l’application ») est conçue pour vous aider à estimer les taxes à la caisse au Québec.
-    La présente politique décrit nos pratiques en matière de renseignements personnels pour la version actuelle de l’application.
-  </p>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="assets/brand/bonacheter-mark.svg" alt="Logo BonAcheter">
+        <span class="brand__text">
+          <span class="brand__title">BonAcheter</span>
+          <span class="brand__tag">Privacy Policy</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="account.html">Account</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Données que nous ne recueillons pas</h2>
-  <p>
-    <strong>Nous ne recueillons, ne stockons ni ne vendons vos renseignements personnels sur nos serveurs.</strong>
-    Il n’y a pas de compte obligatoire pour utiliser les fonctions principales de l’application, et nous n’exploitons pas de publicité ciblée au sein de l’application.
-  </p>
+  <main class="legal-layout">
+    <article class="legal-card">
+      <h1>Privacy Policy</h1>
+      <p class="legal-meta"><strong>Última atualização:</strong> 5 de abril de 2026</p>
+      <p>
+        O BonAcheter foi concebido para ajudar utilizadores a organizar listas de compras, acompanhar orçamento
+        e consultar estimativas informativas de impostos no contexto do Québec. Esta política descreve como a
+        versão atual do aplicativo trata dados e informações pessoais.
+      </p>
 
-  <h2>Fonctionnement sur votre appareil</h2>
-  <p>
-    Les calculs et une partie des préférences peuvent demeurer sur votre appareil. Les technologies fournies par Apple
-    (par exemple le trousseau / les clés d’accès, le cas échéant) sont régies par les paramètres et les politiques d’Apple.
-  </p>
+      <h2>Resumo prático</h2>
+      <div class="note">
+        Na versão atual do MVP, o BonAcheter não opera uma infraestrutura própria pública para perfis de utilizador,
+        publicidade comportamental ou venda de dados pessoais. Grande parte do estado da aplicação permanece no dispositivo.
+      </div>
 
-  <h2>Renseignements publics sur les produits (Open Food Facts)</h2>
-  <p>
-    Si vous utilisez la recherche par code-barres, l’application peut interroger l’API publique
-    <a href="https://world.openfoodfacts.org" rel="noopener noreferrer">Open Food Facts</a> pour afficher des données
-    sur les produits alimentaires. Ces requêtes sont des consultations d’information publique; elles ne constituent pas
-    l’envoi de vos renseignements personnels à BonAcheter.
-  </p>
+      <h2>Dados armazenados no dispositivo</h2>
+      <p>
+        O aplicativo pode armazenar localmente preferências, lista de compras, orçamento, histórico registado no aparelho
+        e dados de autenticação local necessários para a experiência do MVP. Quando o utilizador opta por criar conta por e-mail,
+        a credencial pode permanecer no Keychain do dispositivo. Se o utilizador configurar passkeys, estas são geridas pelas
+        tecnologias e políticas da Apple.
+      </p>
 
-  <h2>Communications avec nous</h2>
-  <p>
-    Si vous nous contactez par courriel ou par un autre moyen, nous utiliserons ces renseignements seulement pour répondre à votre message.
-  </p>
+      <h2>Dados que não vendemos nem usamos para publicidade</h2>
+      <p>
+        O BonAcheter não vende dados pessoais a terceiros e não usa a versão atual do app para publicidade dirigida dentro da aplicação.
+      </p>
 
-  <h2>Modifications</h2>
-  <p>
-    Nous pouvons mettre à jour cette politique si l’application évolue. La date en tête de page indique la dernière révision.
-  </p>
+      <h2>Consultas a serviços públicos de produto</h2>
+      <p>
+        Quando o utilizador procura um produto por código de barras, o app pode consultar a base pública do
+        <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>
+        para obter nome e categorias de produto. Essas consultas destinam-se a enriquecer a experiência de catálogo
+        e não equivalem a venda de dados pessoais a BonAcheter.
+      </p>
 
-  <h2>Contact</h2>
-  <p>
-    Pour toute question relative à cette politique, vous pouvez communiquer avec le développeur via les coordonnées indiquées sur la fiche de l’application dans l’App Store.
-  </p>
+      <h2>Dados de contacto</h2>
+      <p>
+        Se o utilizador entrar em contacto através da página de suporte, GitHub Issues ou outro canal público,
+        as informações enviadas serão utilizadas apenas para analisar e responder ao pedido de suporte.
+      </p>
 
-  <footer>
-    © BonAcheter — Québec, Canada
-  </footer>
+      <h2>Compartilhamento de preços com a comunidade</h2>
+      <p>
+        A aplicação já prevê uma preferência de partilha de preços com a comunidade, mas a documentação do projeto indica
+        que essa capacidade depende de backend/API futuros. Se esse comportamento evoluir, esta política será atualizada antes
+        da ativação pública dessa recolha.
+      </p>
+
+      <h2>Observação sobre impostos e conteúdo informativo</h2>
+      <p>
+        O BonAcheter não se apresenta como fonte legal oficial. As classificações tributáveis e os cálculos mostrados no MVP
+        servem como apoio de orçamento familiar e podem depender de simplificações do produto. As referências oficiais utilizadas
+        pelo projeto continuam publicadas em
+        <a href="architecture/consumption-taxes-quebec.md">architecture/consumption-taxes-quebec.md</a>.
+      </p>
+
+      <h2>Alterações nesta política</h2>
+      <p>
+        Esta política pode ser atualizada conforme o produto evolui. A data de revisão no topo desta página será ajustada quando
+        houver mudanças materiais no tratamento de dados.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Para dúvidas sobre privacidade, utilize a página de <a href="support.html">support</a> ou abra um pedido público em
+        <a href="https://github.com/gilberto00/bonacheter/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
+      </p>
+
+      <div class="inline-links">
+        <a href="index.html">Voltar ao site</a>
+        <a href="support.html">Support</a>
+        <a href="account.html">Account & data</a>
+      </div>
+    </article>
+  </main>
 </body>
 </html>
