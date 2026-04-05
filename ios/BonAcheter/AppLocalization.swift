@@ -349,6 +349,7 @@ struct AppStrings {
     var regionContinue: String { t(en: "Continue", fr: "Continuer", pt: "Continuar", es: "Continuar") }
     
     var languageOnboardingTitle: String { t(en: "Language", fr: "Langue", pt: "Idioma", es: "Idioma") }
+    var onboardingBack: String { t(en: "Back", fr: "Retour", pt: "Voltar", es: "Volver") }
     var languageOnboardingHeadline: String { "BonAcheter" }
     var languageOnboardingSubtitle: String {
         t(en: "Choose your language", fr: "Choisissez votre langue", pt: "Escolha seu idioma", es: "Elige tu idioma")
@@ -495,10 +496,18 @@ struct AppStrings {
     }
     var signUpErrorAccountExists: String {
         t(
-            en: "This email is already registered. Sign in instead.",
-            fr: "Ce courriel est déjà enregistré. Connectez-vous plutôt.",
-            pt: "Este e-mail já está registado. Entre em vez disso.",
-            es: "Este correo ya está registrado. Inicia sesión."
+            en: "This email is already registered and verified. Sign in instead.",
+            fr: "Ce courriel est déjà enregistré et validé. Connectez-vous plutôt.",
+            pt: "Este e-mail já está registado e verificado. Entre em vez disso.",
+            es: "Este correo ya está registrado y verificado. Inicia sesión."
+        )
+    }
+    var signUpErrorWrongPasswordUnverified: String {
+        t(
+            en: "This email is registered but not verified yet. Enter the same password you used when you registered to get a new verification link.",
+            fr: "Ce courriel est enregistré mais pas encore validé. Saisissez le même mot de passe qu’à l’inscription pour recevoir un nouveau lien de validation.",
+            pt: "Este e-mail está registado mas ainda não foi verificado. Use a mesma palavra-passe de quando se registou para obter uma nova ligação de verificação.",
+            es: "Este correo está registrado pero aún no verificado. Usa la misma contraseña que al registrarte para obtener un nuevo enlace de verificación."
         )
     }
     var signUpErrorKeychain: String {
@@ -508,12 +517,22 @@ struct AppStrings {
     var emailVerificationTitle: String {
         t(en: "Verify your email", fr: "Validez votre courriel", pt: "Verifique o seu e-mail", es: "Verifica tu correo")
     }
-    func emailVerificationInstructions(_ email: String) -> String {
+    /// When `canSendMail` is false (simulator, no Mail account), the “Send verification email” button is hidden—copy must match visible actions.
+    func emailVerificationInstructions(email: String, canSendMail: Bool) -> String {
+        if canSendMail {
+            let fmt = t(
+                en: "Your account is almost ready. Tap “Send verification email”, send the message to %@ from your Mail app, then open the link on this device.",
+                fr: "Votre compte est presque prêt. Touchez « Envoyer le courriel », envoyez le message à %@ depuis Courrier, puis ouvrez le lien sur cet appareil.",
+                pt: "A sua conta está quase pronta. Toque em “Enviar e-mail”, envie a mensagem para %@ no Mail e abra a ligação neste dispositivo.",
+                es: "Tu cuenta casi está lista. Toca «Enviar correo», envía el mensaje a %@ desde Mail y abre el enlace en este dispositivo."
+            )
+            return String(format: fmt, email)
+        }
         let fmt = t(
-            en: "Your account is almost ready. Tap “Send verification email”, send the message to %@ from your Mail app, then open the link on this device.",
-            fr: "Votre compte est presque prêt. Touchez « Envoyer le courriel », envoyez le message à %@ depuis Courrier, puis ouvrez le lien sur cet appareil.",
-            pt: "A sua conta está quase pronta. Toque em “Enviar e-mail”, envie a mensagem para %@ no Mail e abra a ligação neste dispositivo.",
-            es: "Tu cuenta casi está lista. Toca «Enviar correo», envía el mensaje a %@ desde Mail y abre el enlace en este dispositivo."
+            en: "Your account is almost ready. This device can’t open a pre-filled Mail message (for example on the simulator without Mail). Use “Share verification link” below for %@, open the link on this iPhone or iPad, or paste a link in the field below if you copied it from another device.",
+            fr: "Votre compte est presque prêt. Cet appareil ne peut pas ouvrir un courrier prérempli (par ex. simulateur sans Courrier). Utilisez « Partager le lien de validation » ci-dessous pour %@, ouvrez le lien sur cet iPhone ou iPad, ou collez un lien copié depuis un autre appareil.",
+            pt: "A sua conta está quase pronta. Este dispositivo não abre o Mail pré-preenchido (ex.: simulador sem Mail). Use « Partilhar ligação de verificação » abaixo para %@, abra a ligação neste iPhone ou iPad, ou cole uma ligação no campo abaixo se a copiou doutro dispositivo.",
+            es: "Tu cuenta casi está lista. Este dispositivo no puede abrir un correo rellenado (p. ej. simulador sin Mail). Usa «Compartir enlace de verificación» abajo para %@, abre el enlace en este iPhone o iPad, o pega un enlace abajo si lo copiaste de otro dispositivo."
         )
         return String(format: fmt, email)
     }

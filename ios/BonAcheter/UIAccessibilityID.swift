@@ -14,6 +14,8 @@ enum UIAccessibilityID {
         "ui.onboarding.lang.\(pref.rawValue)"
     }
     
+    static let onboardingBack = "ui.onboarding.back"
+    
     static let householdCreate = "ui.onboarding.household.create"
     static let householdJoin = "ui.onboarding.household.join"
     static let householdInviteField = "ui.onboarding.household.inviteField"

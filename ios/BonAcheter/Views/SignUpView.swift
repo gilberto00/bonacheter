@@ -98,14 +98,15 @@ struct SignUpView: View {
     
     @ViewBuilder
     private func verifyEmailContent(s: AppStrings, pending: (email: String, url: URL)) -> some View {
+        let canMail = MFMailComposeViewController.canSendMail()
         Form {
             Section {
-                Text(s.emailVerificationInstructions(pending.email))
+                Text(s.emailVerificationInstructions(email: pending.email, canSendMail: canMail))
                     .font(.body)
                     .foregroundStyle(.primary)
             }
             Section {
-                if MFMailComposeViewController.canSendMail() {
+                if canMail {
                     Button(s.emailVerificationOpenMail) {
                         openMail(s: s, pending: pending)
                     }
@@ -163,6 +164,8 @@ struct SignUpView: View {
             pendingVerification = (em, url)
         case .accountAlreadyExists:
             alertMessage = s.signUpErrorAccountExists
+        case .wrongPasswordUnverifiedAccount:
+            alertMessage = s.signUpErrorWrongPasswordUnverified
         case .passwordMismatch:
             alertMessage = s.signUpErrorPasswordMismatch
         case .passwordTooShort:

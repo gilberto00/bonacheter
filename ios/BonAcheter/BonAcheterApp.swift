@@ -199,6 +199,8 @@ enum LocalAccountRegistrationResult: Equatable {
     case passwordTooShort
     case passwordMismatch
     case accountAlreadyExists
+    /// Same email exists but not verified; password did not match (cannot resend link from sign-up).
+    case wrongPasswordUnverifiedAccount
     case keychainFailed
 }
 
@@ -424,14 +426,23 @@ final class AppState {
         persist()
     }
     
-    /// Registers a new account on this device (Keychain). Fails if the email is already registered.
+    /// Registers a new account on this device (Keychain). If the email exists but is still unverified and the password matches, issues a new verification link instead of failing.
     func registerAccount(email: String, password: String, confirmPassword: String) -> LocalAccountRegistrationResult {
         let em = email.trimmingCharacters(in: .whitespacesAndNewlines)
         guard LocalCredentialStore.isValidEmailFormat(em) else { return .invalidEmail }
         guard password.count >= 8 else { return .passwordTooShort }
         guard password == confirmPassword else { return .passwordMismatch }
-        guard !LocalCredentialStore.accountExists(for: em) else { return .accountAlreadyExists }
         let norm = LocalCredentialStore.normalizedEmail(em)
+        if LocalCredentialStore.accountExists(for: em) {
+            if LocalCredentialStore.isEmailVerified(norm) {
+                return .accountAlreadyExists
+            }
+            guard LocalCredentialStore.verify(email: em, password: password) else {
+                return .wrongPasswordUnverifiedAccount
+            }
+            let url = EmailVerificationService.makeMagicLink(for: norm)
+            return .pendingEmailVerification(email: norm, verificationURL: url)
+        }
         do {
             try LocalCredentialStore.saveAccount(email: em, password: password)
         } catch {

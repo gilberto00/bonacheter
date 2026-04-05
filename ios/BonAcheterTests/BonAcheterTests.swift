@@ -192,10 +192,37 @@ final class AppStateRegistrationTests: XCTestCase {
         XCTAssertEqual(state.signInWithEmail(email: "v@test.com", password: "12345678"), .success)
     }
     
-    func testRegisterRejectsDuplicate() {
+    /// Same email + password while still unverified → new magic link (resume), not “already exists”.
+    func testRegisterResumesVerificationForUnverifiedDuplicate() {
+        UserDefaults.standard.removeObject(forKey: "BonAcheter.tests.skipEmailVerification")
         let state = AppState()
-        _ = state.registerAccount(email: "dup@test.com", password: "12345678", confirmPassword: "12345678")
+        let r1 = state.registerAccount(email: "dup@test.com", password: "12345678", confirmPassword: "12345678")
+        guard case .pendingEmailVerification = r1 else {
+            XCTFail("First register should be pending verification")
+            return
+        }
         let r2 = state.registerAccount(email: "dup@test.com", password: "12345678", confirmPassword: "12345678")
+        guard case .pendingEmailVerification(let email, _) = r2 else {
+            XCTFail("Second register should resume with new verification link")
+            return
+        }
+        XCTAssertEqual(email, "dup@test.com")
+    }
+    
+    func testRegisterWrongPasswordWhenUnverifiedDuplicate() {
+        UserDefaults.standard.removeObject(forKey: "BonAcheter.tests.skipEmailVerification")
+        let state = AppState()
+        _ = state.registerAccount(email: "wp@test.com", password: "12345678", confirmPassword: "12345678")
+        let r2 = state.registerAccount(email: "wp@test.com", password: "87654321", confirmPassword: "87654321")
+        XCTAssertEqual(r2, .wrongPasswordUnverifiedAccount)
+    }
+    
+    func testRegisterRejectsDuplicateWhenVerified() {
+        UserDefaults.standard.set(true, forKey: "BonAcheter.tests.skipEmailVerification")
+        defer { UserDefaults.standard.removeObject(forKey: "BonAcheter.tests.skipEmailVerification") }
+        let state = AppState()
+        _ = state.registerAccount(email: "verif-dup@test.com", password: "12345678", confirmPassword: "12345678")
+        let r2 = state.registerAccount(email: "verif-dup@test.com", password: "12345678", confirmPassword: "12345678")
         XCTAssertEqual(r2, .accountAlreadyExists)
     }
 }
