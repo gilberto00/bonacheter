@@ -36,8 +36,13 @@ struct SettingsView: View {
                 }
             }
             Section(s.settingsRegion) {
-                Text(appState.regionName)
-                    .foregroundStyle(.secondary)
+                NavigationLink {
+                    RegionView(mode: .settings)
+                } label: {
+                    Text(appState.regionName)
+                        .foregroundStyle(.primary)
+                }
+                .accessibilityIdentifier(UIAccessibilityID.settingsRegionEdit)
             }
             Section(s.settingsLanguage) {
                 Picker(s.settingsLanguage, selection: Binding(

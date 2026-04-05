@@ -21,6 +21,8 @@ enum UIAccessibilityID {
     static let householdInviteField = "ui.onboarding.household.inviteField"
     
     static let regionContinue = "ui.onboarding.region.continue"
+    static let settingsRegionEdit = "ui.settings.region.edit"
+    static let settingsRegionSave = "ui.settings.region.save"
     
     static let tabHome = "ui.tab.home"
     static let tabList = "ui.tab.list"

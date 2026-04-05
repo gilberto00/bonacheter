@@ -15,6 +15,7 @@
 		A1000006 /* LanguageOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000006 /* LanguageOnboardingView.swift */; };
 		A1000007 /* HouseholdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000007 /* HouseholdOnboardingView.swift */; };
 		A1000008 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000008 /* RegionView.swift */; };
+		A1000032 /* ShoppingRegionDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000035 /* ShoppingRegionDraft.swift */; };
 		A1000009 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000009 /* DashboardView.swift */; };
 		A1000010 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* ListView.swift */; };
 		A1000011 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* AddItemView.swift */; };
@@ -52,6 +53,7 @@
 		B1000006 /* LanguageOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageOnboardingView.swift; sourceTree = "<group>"; };
 		B1000007 /* HouseholdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseholdOnboardingView.swift; sourceTree = "<group>"; };
 		B1000008 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
+		B1000035 /* ShoppingRegionDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRegionDraft.swift; sourceTree = "<group>"; };
 		B1000009 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B1000010 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		B1000011 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				B1000006 /* LanguageOnboardingView.swift */,
 				B1000007 /* HouseholdOnboardingView.swift */,
 				B1000008 /* RegionView.swift */,
+				B1000035 /* ShoppingRegionDraft.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				A1000006 /* LanguageOnboardingView.swift in Sources */,
 				A1000007 /* HouseholdOnboardingView.swift in Sources */,
 				A1000008 /* RegionView.swift in Sources */,
+				A1000032 /* ShoppingRegionDraft.swift in Sources */,
 				A1000009 /* DashboardView.swift in Sources */,
 				A1000010 /* ListView.swift in Sources */,
 				A1000011 /* AddItemView.swift in Sources */,

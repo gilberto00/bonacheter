@@ -6,13 +6,21 @@
 import SwiftUI
 
 struct RegionView: View {
-    @Environment(AppState.self) private var appState
-    var onNext: () -> Void
-    @State private var isMonteregieEnabled = true
-    @State private var isCMMEnabled = true
-    @State private var city = "Longueuil"
+    enum Mode {
+        case onboarding(onNext: () -> Void)
+        case settings
+    }
     
-    let cities = ["Longueuil", "Saint-Jean-sur-Richelieu", "Montréal"]
+    @Environment(AppState.self) private var appState
+    @Environment(\.dismiss) private var dismiss
+    
+    let mode: Mode
+    
+    @State private var draft = ShoppingRegionDraft(
+        isMonteregieEnabled: true,
+        isCMMEnabled: true,
+        city: ShoppingRegionDraft.defaultCities[0]
+    )
     
     var body: some View {
         let s = appState.strings
@@ -22,34 +30,66 @@ struct RegionView: View {
                     .foregroundStyle(.secondary)
             }
             Section(s.regionRegions) {
-                Toggle(s.regionMonteregieDisplayName, isOn: $isMonteregieEnabled)
-                Toggle(s.regionCMMDisplayName, isOn: $isCMMEnabled)
+                Toggle(s.regionMonteregieDisplayName, isOn: $draft.isMonteregieEnabled)
+                Toggle(s.regionCMMDisplayName, isOn: $draft.isCMMEnabled)
             }
             Section(s.regionCity) {
-                Picker(s.regionCity, selection: $city) {
-                    ForEach(cities, id: \.self) { Text($0).tag($0) }
+                Picker(s.regionCity, selection: $draft.city) {
+                    ForEach(draft.cityPickerOptions, id: \.self) { Text($0).tag($0) }
                 }
                 .pickerStyle(.menu)
             }
-            Section {
-                Button(s.regionContinue) {
-                    appState.regionName = "Montérégie, CMM — \(city)"
-                    appState.persist()
-                    onNext()
+            if case .onboarding = mode {
+                Section {
+                    Button(s.regionContinue) {
+                        applyDraftToAppState()
+                        if case .onboarding(let onNext) = mode {
+                            onNext()
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .fontWeight(.semibold)
+                    .disabled(!draft.hasValidSelection)
+                    .accessibilityIdentifier(UIAccessibilityID.regionContinue)
                 }
-                .frame(maxWidth: .infinity)
-                .fontWeight(.semibold)
-                .accessibilityIdentifier(UIAccessibilityID.regionContinue)
             }
         }
         .navigationTitle(s.regionTitle)
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            draft = ShoppingRegionDraft.parse(appState.regionName)
+        }
+        .toolbar {
+            if case .settings = mode {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(s.addItemSave) {
+                        applyDraftToAppState()
+                        dismiss()
+                    }
+                    .disabled(!draft.hasValidSelection)
+                    .accessibilityIdentifier(UIAccessibilityID.settingsRegionSave)
+                }
+            }
+        }
+    }
+    
+    private func applyDraftToAppState() {
+        guard let name = draft.formattedRegionName() else { return }
+        appState.regionName = name
+        appState.persist()
     }
 }
 
-#Preview {
+#Preview("Onboarding") {
     NavigationStack {
-        RegionView(onNext: {})
+        RegionView(mode: .onboarding(onNext: {}))
+    }
+    .environment(AppState())
+}
+
+#Preview("Settings") {
+    NavigationStack {
+        RegionView(mode: .settings)
     }
     .environment(AppState())
 }

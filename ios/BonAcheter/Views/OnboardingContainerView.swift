@@ -23,10 +23,10 @@ struct OnboardingContainerView: View {
                 case .household:
                     HouseholdOnboardingView(onNext: { step = .region })
                 case .region:
-                    RegionView(onNext: {
+                    RegionView(mode: .onboarding(onNext: {
                         appState.phase = .main
                         appState.persist()
-                    })
+                    }))
                 }
             }
             .toolbar {

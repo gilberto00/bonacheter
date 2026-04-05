@@ -127,6 +127,33 @@ final class GroceryUnitCatalogTests: XCTestCase {
     }
 }
 
+final class ShoppingRegionDraftTests: XCTestCase {
+    func testParseRoundTripDefaultString() {
+        let original = "Montérégie, CMM — Longueuil"
+        let draft = ShoppingRegionDraft.parse(original)
+        XCTAssertTrue(draft.isMonteregieEnabled)
+        XCTAssertTrue(draft.isCMMEnabled)
+        XCTAssertEqual(draft.city, "Longueuil")
+        XCTAssertEqual(draft.formattedRegionName(), original)
+    }
+    
+    func testParseSingleRegion() {
+        let original = "Montérégie — Saint-Jean-sur-Richelieu"
+        let draft = ShoppingRegionDraft.parse(original)
+        XCTAssertTrue(draft.isMonteregieEnabled)
+        XCTAssertFalse(draft.isCMMEnabled)
+        XCTAssertEqual(draft.city, "Saint-Jean-sur-Richelieu")
+        XCTAssertEqual(draft.formattedRegionName(), original)
+    }
+    
+    func testFormattedRegionNameRequiresOneRegion() {
+        var draft = ShoppingRegionDraft.parse("CMM — Montréal")
+        draft.isMonteregieEnabled = false
+        draft.isCMMEnabled = false
+        XCTAssertNil(draft.formattedRegionName())
+    }
+}
+
 final class AppLanguageResolverTests: XCTestCase {
     func testFixedFrench() {
         XCTAssertTrue(AppLanguageResolver.resolvedLanguageCode(for: .french).hasPrefix("fr"))
