@@ -108,6 +108,16 @@ struct SettingsView: View {
                 Text(s.settingsCommunity)
             }
             Section {
+                NavigationLink {
+                    TaxSourcesView()
+                } label: {
+                    Label(s.settingsTaxReferences, systemImage: "book.closed")
+                }
+            } footer: {
+                Text(s.settingsTaxReferencesFootnote)
+                    .font(.caption)
+            }
+            Section {
                 Button(s.settingsSignOut, role: .destructive) {
                     appState.currentUserEmail = nil
                     appState.phase = .landing

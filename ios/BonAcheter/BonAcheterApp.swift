@@ -52,6 +52,15 @@ struct PriceHistoryEntry: Identifiable, Codable, Equatable, Hashable {
     }
 }
 
+// MARK: - Tax category provenance (see docs/architecture/consumption-taxes-quebec.md)
+
+/// How `isTaxable` was set — for UI transparency only, not a legal classification.
+enum TaxCategorySource: String, Codable, Equatable, Hashable {
+    case manual
+    case openFoodFacts
+    case appDefault
+}
+
 // MARK: - List item (stable id for persistence / history)
 
 struct ListItem: Identifiable, Codable, Equatable, Hashable {
@@ -62,14 +71,25 @@ struct ListItem: Identifiable, Codable, Equatable, Hashable {
     var isTaxable: Bool
     /// EAN/UPC digits when known (Open Food Facts lookup).
     var barcode: String?
+    /// Where the tax category came from; `nil` decodes from older saved data.
+    var taxCategorySource: TaxCategorySource?
     
-    init(id: UUID = UUID(), name: String, quantity: String, unit: String, isTaxable: Bool, barcode: String? = nil) {
+    init(
+        id: UUID = UUID(),
+        name: String,
+        quantity: String,
+        unit: String,
+        isTaxable: Bool,
+        barcode: String? = nil,
+        taxCategorySource: TaxCategorySource? = nil
+    ) {
         self.id = id
         self.name = name
         self.quantity = quantity
         self.unit = unit
         self.isTaxable = isTaxable
         self.barcode = barcode
+        self.taxCategorySource = taxCategorySource
     }
 }
 
@@ -289,21 +309,24 @@ final class AppState {
             name: "Lait 2%",
             quantity: "1",
             unit: "L",
-            isTaxable: false
+            isTaxable: false,
+            taxCategorySource: .manual
         ),
         ListItem(
             id: UUID(uuidString: "B2C3D4E5-F6A7-4B5C-9D0E-1F2A3B4C5D6E")!,
             name: "Pain brun",
             quantity: "1",
             unit: "piece",
-            isTaxable: false
+            isTaxable: false,
+            taxCategorySource: .manual
         ),
         ListItem(
             id: UUID(uuidString: "C3D4E5F6-A7B8-4C5D-0E1F-2A3B4C5D6E7F")!,
             name: "Yogourt",
             quantity: "2",
             unit: "piece",
-            isTaxable: true
+            isTaxable: true,
+            taxCategorySource: .openFoodFacts
         )
     ]
     

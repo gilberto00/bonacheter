@@ -13,9 +13,11 @@ struct AddItemView: View {
     @State private var quantity = "1"
     @State private var unit = "piece"
     @State private var isTaxable = false
+    @State private var taxCategorySource: TaxCategorySource = .manual
     @State private var showScanner = false
     @State private var isLookingUpOFF = false
     @State private var lookupError: String?
+    @State private var howCategoryExpanded = false
     
     private var unitValues: [String] {
         GroceryUnitCatalog.orderedUnitIds(for: appState.measurementSystem)
@@ -57,12 +59,46 @@ struct AddItemView: View {
                     .pickerStyle(.menu)
                 }
             }
-            Section(s.addItemTax) {
-                Picker(s.addItemTaxCategory, selection: $isTaxable) {
+            Section {
+                Picker(s.addItemTaxCategory, selection: Binding(
+                    get: { isTaxable },
+                    set: { newValue in
+                        isTaxable = newValue
+                        taxCategorySource = .manual
+                    }
+                )) {
                     Text(s.addItemTaxZero).tag(false)
                     Text(s.addItemTaxable).tag(true)
                 }
                 .pickerStyle(.segmented)
+            } header: {
+                Text(s.addItemTax)
+            } footer: {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(s.addItemTaxOriginTitle)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    Text(s.addItemTaxOriginBody(source: taxCategorySource, isTaxable: isTaxable))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text(s.addItemTaxDisclaimer)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Section {
+                DisclosureGroup(isExpanded: $howCategoryExpanded) {
+                    Text(s.addItemTaxHowBody)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } label: {
+                    Text(s.addItemTaxHowTitle)
+                }
+                NavigationLink {
+                    TaxSourcesView()
+                } label: {
+                    Label(s.addItemTaxSourcesLink, systemImage: "info.circle")
+                }
             }
             Section {
                 Button {
@@ -78,7 +114,8 @@ struct AddItemView: View {
                         quantity: quantity,
                         unit: unit,
                         isTaxable: isTaxable,
-                        barcode: digits.isEmpty ? nil : digits
+                        barcode: digits.isEmpty ? nil : digits,
+                        taxCategorySource: taxCategorySource
                     )
                     appState.addListItem(item)
                     dismiss()
@@ -106,6 +143,7 @@ struct AddItemView: View {
                 name = result.productName
                 barcode = result.barcode
                 isTaxable = result.suggestedTaxable
+                taxCategorySource = .openFoodFacts
                 showScanner = false
             })
             .environment(appState)
@@ -144,6 +182,7 @@ struct AddItemView: View {
             name = result.productName
             barcode = result.barcode
             isTaxable = result.suggestedTaxable
+            taxCategorySource = .openFoodFacts
         } catch {
             lookupError = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
         }

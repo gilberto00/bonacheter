@@ -38,6 +38,7 @@
 		A1000028 /* PasskeyCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000028 /* PasskeyCredentialStore.swift */; };
 		A1000029 /* PasskeyAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000029 /* PasskeyAuthCoordinator.swift */; };
 		A1000030 /* MailComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000030 /* MailComposeView.swift */; };
+		A1000031 /* TaxSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000034 /* TaxSourcesView.swift */; };
 		A1000201 /* BonAcheterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000201 /* BonAcheterUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		B1000028 /* PasskeyCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyCredentialStore.swift; sourceTree = "<group>"; };
 		B1000029 /* PasskeyAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyAuthCoordinator.swift; sourceTree = "<group>"; };
 		B1000030 /* MailComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposeView.swift; sourceTree = "<group>"; };
+		B1000034 /* TaxSourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxSourcesView.swift; sourceTree = "<group>"; };
 		B1000031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1000032 /* BonAcheter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonAcheter.entitlements; sourceTree = "<group>"; };
 		B1000033 /* BonAcheterDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonAcheterDebug.entitlements; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				B1000025 /* SignUpView.swift */,
 				B1000030 /* MailComposeView.swift */,
 				B1000017 /* ItemPriceHistoryView.swift */,
+				B1000034 /* TaxSourcesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				A1000009 /* DashboardView.swift in Sources */,
 				A1000010 /* ListView.swift in Sources */,
 				A1000011 /* AddItemView.swift in Sources */,
+				A1000031 /* TaxSourcesView.swift in Sources */,
 				A1000012 /* ScannerView.swift in Sources */,
 				A1000013 /* BudgetView.swift in Sources */,
 				A1000014 /* RecordPurchaseView.swift in Sources */,

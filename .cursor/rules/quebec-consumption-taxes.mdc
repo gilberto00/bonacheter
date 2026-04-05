@@ -1,0 +1,10 @@
+---
+description: Ao discutir impostos de consumo (TPS/GST, TVQ/QST) no Québec no âmbito BonAcheter.
+alwaysApply: false
+---
+
+# Fontes fiscais Québec
+
+- Cite regras ou números (taxas, bases de cálculo) apenas com base em **`revenuquebec.ca`** ou **`canada.ca`**, ou no documento do repositório [`docs/architecture/consumption-taxes-quebec.md`](docs/architecture/consumption-taxes-quebec.md) (que por sua vez deve listar URLs oficiais).
+- Não inventar APIs governamentais ou MCP oficiais para classificação por código de barras.
+- Depois de consultar páginas oficiais para alterar comportamento ou copy, actualizar a data em **Última revisão** em `docs/architecture/consumption-taxes-quebec.md` quando o resumo mudar.

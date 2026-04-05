@@ -25,7 +25,24 @@ final class ListItemCodableTests: XCTestCase {
         let data = try XCTUnwrap(json.data(using: .utf8))
         let item = try JSONDecoder().decode(ListItem.self, from: data)
         XCTAssertNil(item.barcode)
+        XCTAssertNil(item.taxCategorySource)
         XCTAssertEqual(item.name, "Pain")
+    }
+    
+    func testRoundTripWithTaxCategorySource() throws {
+        let id = UUID()
+        let item = ListItem(
+            id: id,
+            name: "Yogourt",
+            quantity: "4",
+            unit: "piece",
+            isTaxable: true,
+            barcode: nil,
+            taxCategorySource: .openFoodFacts
+        )
+        let data = try JSONEncoder().encode(item)
+        let decoded = try JSONDecoder().decode(ListItem.self, from: data)
+        XCTAssertEqual(decoded.taxCategorySource, .openFoodFacts)
     }
 }
 

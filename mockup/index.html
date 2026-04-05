@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>BonAcheter — Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BonAcheter — Protótipo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
@@ -11,235 +11,582 @@
 </head>
 <body>
   <div class="phone">
-    <div class="status-bar"></div>
+    <div class="status-bar" aria-hidden="true"></div>
 
-    <!-- Screen: Landing -->
-    <div id="screen-landing" class="screen active">
-      <div class="screen-content landing-content">
-        <h1 class="logo">BonAcheter</h1>
-        <p class="subtitle">Liste partagée, budget et taxes Québec.<br>Montérégie, CMM.</p>
-        <a href="#screen-lang" class="btn btn-primary block">Commencer</a>
-        <a href="#screen-dashboard" class="btn btn-secondary block">J'ai déjà un compte</a>
-      </div>
-    </div>
-
-    <!-- Screen: Dashboard -->
-    <div id="screen-dashboard" class="screen">
-      <header class="header">
-        <h2>Tableau de bord</h2>
-      </header>
-      <div class="screen-content dashboard-content">
-        <div class="dashboard-summary">
-          <p class="label">Budget période</p>
-          <p class="budget-big">80 $ <span>restants / 200 $</span></p>
-          <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
-        </div>
-        <a href="#screen-list" class="dashboard-card">Ma liste <span class="arrow">→</span></a>
-        <a href="#screen-budget" class="dashboard-card">Budget <span class="arrow">→</span></a>
-        <a href="#screen-record" class="dashboard-card">
-          Dernière course <span class="arrow">→</span>
-          <span class="card-meta">IGA — 45,20 $</span>
-        </a>
-        <a href="#screen-settings" class="dashboard-card">Paramètres <span class="arrow">→</span></a>
-      </div>
-    </div>
-
-    <!-- Screen: Onboarding Langue -->
-    <div id="screen-lang" class="screen">
-      <div class="screen-content">
-        <h1 class="logo">BonAcheter</h1>
-        <p class="subtitle">Choisissez votre langue</p>
-        <div class="btn-group">
-          <a href="#screen-household" class="btn btn-primary">Français</a>
-          <a href="#screen-household" class="btn btn-secondary">English</a>
+    <div class="stage">
+      <div id="screen-landing" class="screen active">
+        <div class="screen-body screen-body--center">
+          <h1 class="logo">BonAcheter</h1>
+          <p class="subtitle">Lista compartilhada, orçamento e impostos do Québec.<br>Montérégie, CMM.</p>
+          <a href="#screen-lang" class="btn btn-primary block">Começar</a>
+          <a href="#screen-dashboard" class="btn btn-secondary block">Já tenho uma conta</a>
+          <a href="#screen-signup" class="btn btn-ghost block">Criar conta com e-mail</a>
         </div>
       </div>
-    </div>
 
-    <!-- Screen: Créer / Rejoindre foyer -->
-    <div id="screen-household" class="screen">
-      <header class="header">
-        <a href="#screen-lang" class="back">←</a>
-        <h2>Foyer</h2>
-      </header>
-      <div class="screen-content">
-        <a href="#screen-region" class="btn btn-primary block">Créer un foyer</a>
-        <p class="or">ou</p>
-        <input type="text" class="input" placeholder="Code d'invitation" aria-label="Code d'invitation">
-        <a href="#screen-region" class="btn btn-secondary block">Rejoindre</a>
-      </div>
-    </div>
-
-    <!-- Screen: Région -->
-    <div id="screen-region" class="screen">
-      <header class="header">
-        <a href="#screen-household" class="back">←</a>
-        <h2>Région d'achat</h2>
-      </header>
-      <div class="screen-content">
-        <p class="label">Pays / Province</p>
-        <p class="value">Canada — Québec</p>
-        <p class="label">Région(s)</p>
-        <label class="checkbox"><input type="checkbox" checked> Montérégie</label>
-        <label class="checkbox"><input type="checkbox" checked> CMM</label>
-        <p class="label">Ville</p>
-        <select class="input">
-          <option>Longueuil</option>
-          <option>Saint-Jean-sur-Richelieu</option>
-          <option>Montréal</option>
-        </select>
-        <a href="#screen-dashboard" class="btn btn-primary block">Continuer</a>
-      </div>
-    </div>
-
-    <!-- Screen: Liste principale -->
-    <div id="screen-list" class="screen">
-      <header class="header">
-        <h2>Ma liste</h2>
-        <a href="#screen-dashboard" class="icon-home" aria-label="Accueil">⌂</a>
-        <a href="#screen-settings" class="icon" aria-label="Paramètres">⚙</a>
-      </header>
-      <div class="budget-bar">
-        <span>Budget</span>
-        <span class="budget-value">120 $ / 200 $</span>
-        <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
-        <span class="period">Bi-hebdo</span>
-      </div>
-      <div class="screen-content list-content">
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Lait 2%</span><span class="item-meta">1 L · 0% tax</span></li>
-          <li class="item"><span class="item-name">Pain brun</span><span class="item-meta">1 · 0% tax</span></li>
-          <li class="item"><span class="item-name">Yogourt</span><span class="item-meta">2 · 14,98% tax</span></li>
-        </ul>
-        <a href="#screen-add-item" class="btn btn-primary block">+ Ajouter un article</a>
-        <a href="#screen-record" class="btn btn-secondary block">J'ai fait les courses</a>
-      </div>
-    </div>
-
-    <!-- Screen: Ajouter article -->
-    <div id="screen-add-item" class="screen">
-      <header class="header">
-        <a href="#screen-list" class="back">←</a>
-        <h2>Nouvel article</h2>
-      </header>
-      <div class="screen-content form">
-        <label class="label">Nom</label>
-        <input type="text" class="input" placeholder="ex. Lait 2%">
-        <label class="label">Quantité / Unité</label>
-        <div class="row">
-          <input type="number" class="input" value="1" style="width:4rem">
-          <input type="text" class="input" placeholder="L, kg, pièce" style="flex:1">
+      <div id="screen-signup" class="screen">
+        <header class="header">
+          <a href="#screen-landing" class="back" aria-label="Voltar">←</a>
+          <h2>Conta</h2>
+        </header>
+        <div class="screen-body">
+          <p class="muted">Protótipo: telas de login com passkey / e-mail estão no app iOS.</p>
+          <label class="field-label" for="signup-email">E-mail</label>
+          <input id="signup-email" type="email" class="input" placeholder="voce@exemplo.ca" autocomplete="off">
+          <a href="#screen-lang" class="btn btn-primary block">Continuar (mock)</a>
         </div>
-        <label class="label">Taxe</label>
-        <div class="btn-group small">
-          <button type="button" class="btn btn-secondary active">0% (alimentaire)</button>
-          <button type="button" class="btn btn-secondary">14,98% (taxable)</button>
+      </div>
+
+      <div id="screen-lang" class="screen">
+        <div class="screen-body screen-body--center">
+          <h1 class="logo">BonAcheter</h1>
+          <p class="subtitle">Escolha seu idioma</p>
+          <p class="hint">Você pode fixar um idioma ou seguir o sistema (app iOS).</p>
+          <a href="#screen-household" class="btn btn-primary block">Português</a>
+          <a href="#screen-household" class="btn btn-secondary block">English</a>
         </div>
-        <a href="#screen-scanner" class="btn btn-outline block">📷 Scanner code-barres</a>
-        <a href="#screen-list" class="btn btn-primary block">Enregistrer</a>
       </div>
-    </div>
 
-    <!-- Screen: Scanner (mock) -->
-    <div id="screen-scanner" class="screen">
-      <header class="header">
-        <a href="#screen-add-item" class="back">←</a>
-        <h2>Scanner</h2>
-      </header>
-      <div class="scanner-area">
-        <div class="scanner-placeholder">Vue caméra (mock)<br>Code-barres / QR</div>
-        <a href="#screen-add-item" class="btn btn-primary">Simuler un scan réussi</a>
-      </div>
-    </div>
-
-    <!-- Screen: Budget -->
-    <div id="screen-budget" class="screen">
-      <header class="header">
-        <a href="#screen-dashboard" class="back">←</a>
-        <h2>Budget</h2>
-      </header>
-      <div class="screen-content form">
-        <label class="label">Période</label>
-        <div class="btn-group small">
-          <button type="button" class="btn btn-primary active">Bi-hebdo</button>
-          <button type="button" class="btn btn-secondary">Mensuel</button>
+      <div id="screen-household" class="screen">
+        <header class="header">
+          <a href="#screen-lang" class="back" aria-label="Voltar">←</a>
+          <h2>Lar</h2>
+        </header>
+        <div class="screen-body">
+          <a href="#screen-region" class="btn btn-primary block">Criar um lar</a>
+          <p class="or">ou</p>
+          <label class="field-label" for="invite-code">Código de convite</label>
+          <input id="invite-code" type="text" class="input" placeholder="Código de convite" autocomplete="off">
+          <a href="#screen-region" class="btn btn-secondary block">Entrar</a>
         </div>
-        <label class="label">Montant (CAD)</label>
-        <input type="number" class="input" value="200" placeholder="200">
-        <p class="muted">Solde actuel : 80 $ restants</p>
-        <a href="#screen-dashboard" class="btn btn-primary block">Enregistrer</a>
       </div>
-    </div>
 
-    <!-- Screen: Enregistrer une course -->
-    <div id="screen-record" class="screen">
-      <header class="header">
-        <a href="#screen-dashboard" class="back">←</a>
-        <h2>Enregistrer la course</h2>
-      </header>
-      <div class="screen-content form">
-        <input type="text" class="input" placeholder="Magasin (ex. IGA, Maxi)">
-        <div class="purchase-items">
-          <label class="checkbox row">
-            <input type="checkbox">
-            <span>Lait 2%</span>
-            <input type="text" class="input price" placeholder="Prix $" style="width:5rem">
-          </label>
-          <label class="checkbox row">
-            <input type="checkbox">
-            <span>Pain brun</span>
-            <input type="text" class="input price" placeholder="Prix $" style="width:5rem">
-          </label>
-          <label class="checkbox row">
-            <input type="checkbox" checked>
-            <span>Yogourt</span>
-            <input type="text" class="input price" value="4.99" style="width:5rem">
-          </label>
+      <div id="screen-region" class="screen">
+        <header class="header">
+          <a href="#screen-household" class="back" aria-label="Voltar">←</a>
+          <h2>Região de compra</h2>
+        </header>
+        <div class="screen-body">
+          <label class="field-label">País / província</label>
+          <p class="muted" style="margin-top:0">Canadá — Québec</p>
+          <label class="field-label">Região(ões)</label>
+          <label class="checkbox-line"><input type="checkbox" checked> Montérégie</label>
+          <label class="checkbox-line"><input type="checkbox" checked> CMM</label>
+          <label class="field-label" for="city">Cidade</label>
+          <select id="city" class="input">
+            <option>Longueuil</option>
+            <option>Saint-Jean-sur-Richelieu</option>
+            <option>Montréal</option>
+          </select>
+          <a href="#screen-dashboard" class="btn btn-primary block">Continuar</a>
         </div>
-        <div class="totals">
-          <p>Sous-total <span>4,99 $</span></p>
-          <p>Taxes <span>0,75 $</span></p>
-          <p class="total">Total <span>5,74 $</span></p>
+      </div>
+
+      <div id="screen-dashboard" class="screen">
+        <header class="header">
+          <h2>Painel</h2>
+        </header>
+        <div class="screen-body screen-body--flush">
+          <div class="hero-budget">
+            <p class="label">Orçamento do período</p>
+            <p class="amount">80 $ <span>restantes / 200 $</span></p>
+            <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
+          </div>
+          <p class="section-title">Acesso rápido</p>
+          <div class="card card--flush">
+            <a href="#screen-list" class="card-row">
+              <span class="row-icon" aria-hidden="true">☰</span>
+              <span class="row-text">Minha lista</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="#screen-budget" class="card-row">
+              <span class="row-icon" aria-hidden="true">$</span>
+              <span class="row-text">Orçamento</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="#screen-record" class="card-row">
+              <span class="row-icon" aria-hidden="true">🛒</span>
+              <span class="row-text">Última compra</span>
+              <span class="chevron">›</span>
+              <span class="row-meta" style="flex-basis:100%;margin-left:40px;margin-top:-4px">IGA — 45,20 $</span>
+            </a>
+            <a href="#screen-settings" class="card-row">
+              <span class="row-icon" aria-hidden="true">⚙</span>
+              <span class="row-text">Ajustes</span>
+              <span class="chevron">›</span>
+            </a>
+          </div>
         </div>
-        <a href="#screen-dashboard" class="btn btn-primary block">Enregistrer la course</a>
+      </div>
+
+      <div id="screen-list" class="screen">
+        <header class="header">
+          <h2>Minha lista</h2>
+          <a href="#screen-dashboard" class="icon-link icon-link--home" aria-label="Início">⌂</a>
+          <a href="#screen-settings" class="icon-link" aria-label="Ajustes">⚙</a>
+        </header>
+        <div class="screen-body screen-body--flush" style="padding-top:0">
+          <div class="list-budget-strip" id="list-budget-strip" role="button" tabindex="0">
+            <div class="row-top">
+              <span>Orçamento</span>
+              <strong>120 $ / 200 $</strong>
+            </div>
+            <div class="progress"><div class="progress-fill" style="width:60%"></div></div>
+            <p class="period">Quinzenal</p>
+          </div>
+          <p class="section-title">Itens</p>
+          <div class="card card--flush">
+            <div class="item-block">
+              <a href="#screen-item-lait">
+                <div class="title">Leite 2%</div>
+                <div class="sub">1 L · 0% imposto
+Código de barras 3017620422003</div>
+                <span class="tax-source tax-source--off">Escolha manual</span>
+              </a>
+            </div>
+            <div class="item-block">
+              <a href="#screen-item-pain">
+                <div class="title">Pão integral</div>
+                <div class="sub">1 un. · 0% imposto</div>
+                <span class="tax-source tax-source--off">Escolha manual</span>
+              </a>
+            </div>
+            <div class="item-block">
+              <a href="#screen-item-yogourt">
+                <div class="title">Iogurte</div>
+                <div class="sub">2 un. · 14,98% imposto</div>
+                <div class="stats">Méd. 4,45 $ · mín. 3,99 $ · máx. 4,99 $</div>
+                <span class="tax-source">Estim. Open Food Facts — categorias do produto</span>
+              </a>
+            </div>
+          </div>
+          <p class="section-title">Ações</p>
+          <div class="card card--flush">
+            <a href="#screen-add-item" class="card-row">
+              <span class="row-icon" aria-hidden="true">＋</span>
+              <span class="row-text">Adicionar item</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="#screen-record" class="card-row">
+              <span class="row-text">Fiz as compras</span>
+              <span class="chevron">›</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="screen-item-lait" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Leite 2%</h2>
+        </header>
+        <div class="screen-body screen-body--flush">
+          <p class="section-title">Resumo</p>
+          <p class="muted" style="padding:12px 16px;margin:0">Nenhuma compra registrada para este item.</p>
+        </div>
+      </div>
+
+      <div id="screen-item-pain" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Pão integral</h2>
+        </header>
+        <div class="screen-body screen-body--flush">
+          <p class="section-title">Resumo</p>
+          <p class="muted" style="padding:12px 16px;margin:0">Nenhuma compra registrada para este item.</p>
+        </div>
+      </div>
+
+      <div id="screen-item-yogourt" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Iogurte</h2>
+        </header>
+        <div class="screen-body screen-body--flush">
+          <p class="section-title">Resumo</p>
+          <div class="card card--flush">
+            <div class="history-stat"><span>Média</span><span>4,45 $</span></div>
+            <div class="history-stat"><span>Mais barato</span><span>3,99 $</span></div>
+            <div class="history-stat"><span>Mais caro</span><span>4,99 $</span></div>
+            <div class="history-stat"><span>Compras</span><span>5</span></div>
+          </div>
+          <p class="section-title">Histórico</p>
+          <div class="card card--flush">
+            <div class="history-entry">
+              <div class="line1"><span>28 de março de 2026</span><span class="price">4,99 $</span></div>
+              <div class="store">IGA</div>
+            </div>
+            <div class="history-entry">
+              <div class="line1"><span>15 de março de 2026</span><span class="price">4,29 $</span></div>
+              <div class="store">Maxi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="screen-add-item" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Novo item</h2>
+        </header>
+        <div class="screen-body screen-body--flush" style="padding-top:8px">
+          <label class="field-label" for="item-name">Nome</label>
+          <input id="item-name" type="text" class="input" placeholder="ex. Leite 2%">
+          <label class="field-label" for="barcode-off">Código de barras (Open Food Facts)</label>
+          <input id="barcode-off" type="text" class="input" placeholder="8+ dígitos (EAN/UPC)" inputmode="numeric">
+          <button type="button" class="btn btn-secondary btn-sm">Buscar produto</button>
+          <label class="field-label">Quantidade / unidade</label>
+          <div class="row-inputs">
+            <input type="number" class="input input--narrow" value="1" aria-label="Quantidade">
+            <select class="input" aria-label="Unidade">
+              <option>un.</option>
+              <option>L</option>
+              <option>kg</option>
+            </select>
+          </div>
+          <label class="field-label">Imposto · categoria</label>
+          <div class="seg" id="tax-seg" role="group" aria-label="Categoria de imposto">
+            <button type="button" class="active" data-tax="zero">0% (alimentação básica)</button>
+            <button type="button" data-tax="taxable">14,98% (tributado)</button>
+          </div>
+          <div class="info-callout" id="tax-source-callout">
+            <strong>Origem da categoria</strong>
+            <span id="tax-source-text">Escolha manual — você pode alterar após a leitura ou conforme o rótulo na loja.</span>
+          </div>
+          <p class="disclaimer">Apenas indicativo — este protótipo não substitui orientação fiscal. Em dúvida, consulte Revenu Québec ou a ARC.</p>
+          <details class="tax-details tax-details--inline">
+            <summary>Como essa categoria é definida</summary>
+            <div class="detail-body">
+              <p style="margin:0 0 8px"><strong>Fontes possíveis:</strong></p>
+              <ul style="margin:0;padding-left:1.25rem">
+                <li><strong>Sua escolha</strong> no controle acima;</li>
+                <li><strong>Open Food Facts</strong> após scan ou busca (heurística nas categorias do produto);</li>
+                <li><strong>Valor padrão</strong> do app quando não há outra fonte.</li>
+              </ul>
+              <p style="margin:10px 0 0;font-size:0.75rem">Documentação: <a href="../docs/architecture/consumption-taxes-quebec.md" target="_blank" rel="noopener">consumption-taxes-quebec.md</a>. O app guarda o booleano <code>isTaxable</code>, não o detalhe legal por artigo.</p>
+            </div>
+          </details>
+          <p class="link-inline"><a href="#screen-tax-info">ℹ️ GST/QST (TPS/TVQ) e links oficiais</a></p>
+          <a href="#screen-scanner" class="btn btn-outline block">Ler código de barras</a>
+          <a href="#screen-list" class="btn btn-primary block">Salvar</a>
+        </div>
+      </div>
+
+      <div id="screen-tax-info" class="screen">
+        <header class="header">
+          <a href="#screen-add-item" class="back" aria-label="Voltar">←</a>
+          <h2>Fontes dos impostos (Québec)</h2>
+        </header>
+        <div class="screen-body">
+          <div class="info-callout">
+            <strong>1. Taxa combinada exibida (14,98&nbsp;% neste protótipo)</strong>
+            Em linhas « tributáveis », o app iOS aplica um fator único arredondado (ver <code>RecordPurchaseView</code>, coeficiente <code>0.1498</code>) para estimar o orçamento. Na prática, GST/TPS (5&nbsp;%) e QST/TVQ (9,975&nbsp;%) seguem as regras oficiais no caixa; o detalhe aqui é <strong>só indicativo</strong>. Leia também <a href="../docs/architecture/consumption-taxes-quebec.md" target="_blank" rel="noopener">docs/architecture/consumption-taxes-quebec.md</a>.
+          </div>
+          <div class="info-callout">
+            <strong>2. Origem da categoria (0&nbsp;% vs tributável)</strong>
+            Pode vir da <strong>sua escolha</strong>, de uma <strong>sugestão Open Food Facts</strong> (categorias do produto, heurística em <code>OpenFoodFactsClient</code>) ou de um padrão do app. Isso não é certificação fiscal por código de barras.
+          </div>
+          <p class="field-label" style="margin-top:12px">3. Referências oficiais</p>
+          <div class="card">
+            <a href="https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/collecting-gst-and-qst/calculating-the-taxes/" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">Revenu Québec — cálculo dos impostos</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/special-cases-gsthst-and-qst/food-services-sector-applying-the-gst-and-qst/grocery-and-convenience-stores/" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">Mercearias (GST e QST)</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses.html" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">ARC — GST/HST (empresas)</span>
+              <span class="chevron">›</span>
+            </a>
+          </div>
+          <p class="disclaimer" style="margin-top:16px">BonAcheter é para estimativa de orçamento familiar, não conformidade fiscal de lojistas.</p>
+          <a href="#screen-add-item" class="btn btn-primary block">Voltar</a>
+        </div>
+      </div>
+
+      <div id="screen-scanner" class="screen">
+        <header class="header">
+          <a href="#screen-add-item" class="back" aria-label="Voltar">←</a>
+          <h2>Leitor</h2>
+        </header>
+        <div class="scanner-stage">
+          <p class="scanner-hint">Vista da câmera — código de barras / QR</p>
+          <a href="#screen-add-item-scanned" class="btn btn-primary">Simular leitura bem-sucedida</a>
+        </div>
+      </div>
+
+      <div id="screen-add-item-scanned" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Novo item</h2>
+        </header>
+        <div class="screen-body screen-body--flush" style="padding-top:8px">
+          <label class="field-label">Nome</label>
+          <input type="text" class="input" value="Barra de cereal orgânica" readonly>
+          <label class="field-label">Código de barras (Open Food Facts)</label>
+          <input type="text" class="input" value="3274080005003" readonly>
+          <label class="field-label">Quantidade / unidade</label>
+          <div class="row-inputs">
+            <input type="number" class="input input--narrow" value="1">
+            <select class="input"><option>un.</option></select>
+          </div>
+          <label class="field-label">Imposto · categoria</label>
+          <div class="seg">
+            <button type="button">0% (alimentação básica)</button>
+            <button type="button" class="active">14,98% (tributado)</button>
+          </div>
+          <div class="info-callout">
+            <strong>Origem da categoria</strong>
+            Estimativa Open Food Facts — categorias do produto (heurística Québec, MVP).
+          </div>
+          <p class="disclaimer">Confira sempre o rótulo ou o recibo: a categoria pode estar errada.</p>
+          <p class="link-inline"><a href="#screen-tax-info">ℹ️ GST/QST e fontes oficiais</a></p>
+          <a href="#screen-list" class="btn btn-primary block">Salvar</a>
+        </div>
+      </div>
+
+      <div id="screen-budget" class="screen">
+        <header class="header">
+          <a href="#screen-dashboard" class="back" aria-label="Voltar">←</a>
+          <h2>Orçamento</h2>
+        </header>
+        <div class="screen-body">
+          <label class="field-label">Período</label>
+          <div class="seg" id="budget-period-seg">
+            <button type="button" class="active">Quinzenal</button>
+            <button type="button">Mensal</button>
+          </div>
+          <label class="field-label" for="budget-amt">Valor (CAD)</label>
+          <input id="budget-amt" type="number" class="input" value="200">
+          <p class="muted">Saldo atual: 80 $ restantes</p>
+          <a href="#screen-dashboard" class="btn btn-primary block">Salvar</a>
+        </div>
+      </div>
+
+      <div id="screen-record" class="screen">
+        <header class="header">
+          <a href="#screen-list" class="back" aria-label="Voltar">←</a>
+          <h2>Registrar compra</h2>
+        </header>
+        <div class="screen-body screen-body--flush" style="padding-top:8px">
+          <label class="field-label" for="store-name">Loja</label>
+          <input id="store-name" type="text" class="input" placeholder="ex. IGA, Maxi">
+          <p class="section-title">Itens comprados</p>
+          <div class="card card--flush purchase-list">
+            <label class="check-line">
+              <input type="checkbox">
+              <span class="name">Leite 2%</span>
+              <input type="text" class="price-input" placeholder="0.00" inputmode="decimal">
+            </label>
+            <label class="check-line">
+              <input type="checkbox">
+              <span class="name">Pão integral</span>
+              <input type="text" class="price-input" placeholder="0.00" inputmode="decimal">
+            </label>
+            <label class="check-line">
+              <input type="checkbox" checked>
+              <span class="name">Iogurte</span>
+              <input type="text" class="price-input" value="4.99" inputmode="decimal">
+            </label>
+          </div>
+          <details class="tax-details">
+            <summary>Detalhe dos impostos (GST/QST) — fonte: estimativa de orçamento</summary>
+            <div class="detail-body">
+              <p style="margin:0 0 8px"><strong>Indicativo:</strong> subtotal das linhas marcadas como tributáveis na lista (aqui só o iogurte a 4,99&nbsp;$), com a <strong>mesma simplificação do app</strong> (arredondamentos):</p>
+              <div class="detail-row"><span>GST/TPS 5&nbsp;% (sobre base tributável)</span><span>0,25&nbsp;$</span></div>
+              <div class="detail-row"><span>QST/TVQ 9,975&nbsp;% (ilustrativo na mesma base pré-TPS)</span><span>0,50&nbsp;$</span></div>
+              <div class="detail-row" style="font-weight:600;color:var(--text)"><span>Impostos (total do protótipo)</span><span>0,75&nbsp;$</span></div>
+              <p style="font-size:0.75rem;margin:10px 0 0;opacity:0.9">No caixa, a TVQ segue as regras do Revenu Québec (em geral sobre o valor já com TPS). Alimentos básicos isentos: 0&nbsp;% em ambos nos casos previstos — por isso a <a href="#screen-tax-info">fonte da categoria</a> por item importa.</p>
+            </div>
+          </details>
+          <div class="totals">
+            <div class="totals-row"><span>Subtotal</span><span>4,99 $</span></div>
+            <div class="totals-row"><span>Impostos</span><span>0,75 $</span></div>
+            <div class="totals-row total"><span>Total</span><span>5,74 $</span></div>
+          </div>
+          <p class="section-title">Resumo</p>
+          <a href="#screen-dashboard" class="btn btn-primary block">Salvar compra</a>
+        </div>
+      </div>
+
+      <div id="screen-settings" class="screen">
+        <header class="header">
+          <a href="#screen-dashboard" class="back" aria-label="Voltar">←</a>
+          <h2>Ajustes</h2>
+        </header>
+        <div class="screen-body screen-body--flush">
+          <p class="section-title">Conta</p>
+          <div class="card card--flush">
+            <div class="toggle-row">
+              <div>
+                <div class="t-label">Conectado</div>
+                <div class="t-sub">voce@exemplo.ca (wireframe)</div>
+              </div>
+            </div>
+            <a href="#" class="card-row" style="color:var(--primary)"><span class="row-text">Adicionar chave de acesso</span><span class="chevron">›</span></a>
+          </div>
+          <p class="section-title">Região(ões) de compra</p>
+          <p class="muted" style="margin-top:0;padding:0 16px">Montérégie, CMM — Longueuil</p>
+          <p class="section-title">Idioma</p>
+          <div class="card card--flush">
+            <label class="card-row" style="cursor:default">
+              <span class="row-text">Exibição</span>
+              <select class="input" style="width:auto;flex:1;max-width:11rem;margin:0" aria-label="Idioma">
+                <option>Português (Brasil)</option>
+                <option>English</option>
+                <option>Français</option>
+                <option>Español</option>
+                <option>Idioma do sistema</option>
+              </select>
+            </label>
+          </div>
+          <p class="section-title">Unidades de medida</p>
+          <div class="card card--flush">
+            <label class="card-row" style="cursor:default">
+              <span class="row-text">Sistema</span>
+              <select class="input" style="width:auto;flex:1;max-width:12rem;margin:0">
+                <option>Brasil e Canadá (métrico)</option>
+                <option>Estados Unidos (US)</option>
+              </select>
+            </label>
+          </div>
+          <p class="footer-text">O métrico (L, kg, g, ml) combina com rótulos comuns no Brasil e no Canadá.</p>
+          <p class="section-title">Lar</p>
+          <div class="card card--flush">
+            <div class="card-row" style="cursor:default">
+              <span class="row-text">Código de convite</span>
+              <span class="mono">BAC-7F2-Q9</span>
+            </div>
+            <a href="#" class="card-row"><span class="row-text">Copiar código</span></a>
+            <a href="#" class="card-row"><span class="row-text">Compartilhar convite</span></a>
+          </div>
+          <p class="footer-text">O mesmo código em cada aparelho sincronizará quando o servidor estiver ativo (veja a doc).</p>
+          <p class="section-title">Comunidade</p>
+          <div class="card card--flush">
+            <div class="toggle-row">
+              <div>
+                <div class="t-label">Compartilhar preços (comunidade)</div>
+                <div class="t-sub">Contribuir com médias anônimas quando a API estiver disponível.</div>
+              </div>
+              <button type="button" class="toggle" id="toggle-community" aria-pressed="false" aria-label="Compartilhar preços"></button>
+            </div>
+          </div>
+          <p class="section-title">Referências fiscais (Québec)</p>
+          <p class="footer-text" style="margin-top:0">Links oficiais para checar produtos isentos vs tributáveis — o protótipo não aplica essas regras em tempo real. Documentação do projeto: <a href="../docs/architecture/consumption-taxes-quebec.md" target="_blank" rel="noopener">consumption-taxes-quebec.md</a>.</p>
+          <div class="card card--flush">
+            <a href="https://www.revenuquebec.ca" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">Revenu Québec — início</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="https://www.revenuquebec.ca/fr/citoyens/taxes/biens-et-services-taxables-detaxes-ou-exoneres/tps-et-tvq/alimentation-produits-taxables-detaxes-ou-exoneres/" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">Alimentação — tributados ou isentos</span>
+              <span class="chevron">›</span>
+            </a>
+            <a href="https://www.canada.ca/fr/agence-revenu.html" class="card-row" target="_blank" rel="noopener noreferrer">
+              <span class="row-text">Agência da Receita do Canadá</span>
+              <span class="chevron">›</span>
+            </a>
+          </div>
+          <a href="#screen-landing" class="btn btn-secondary block" style="margin-top:20px">Sair</a>
+        </div>
       </div>
     </div>
 
-    <!-- Screen: Paramètres -->
-    <div id="screen-settings" class="screen">
-      <header class="header">
-        <a href="#screen-dashboard" class="back">←</a>
-        <h2>Paramètres</h2>
-      </header>
-      <div class="screen-content form">
-        <p class="label">Région(s) d'achat</p>
-        <p class="value">Montérégie, CMM — Longueuil</p>
-        <p class="label">Langue</p>
-        <select class="input"><option>Français</option><option>English</option></select>
-        <p class="label">Foyer</p>
-        <a href="#" class="btn btn-outline block">Inviter des membres</a>
-        <a href="#screen-landing" class="btn btn-secondary block">Déconnexion</a>
-      </div>
-    </div>
-
-    <!-- Nav: from list to budget (link in budget bar would go to #screen-budget) -->
+    <nav class="tab-bar tab-bar--hidden" id="tab-bar" aria-label="Navegação principal">
+      <a href="#screen-dashboard" class="tab" id="tab-dashboard">
+        <span class="tab-icon" aria-hidden="true">⌂</span>
+        Início
+      </a>
+      <a href="#screen-list" class="tab" id="tab-list">
+        <span class="tab-icon" aria-hidden="true">☰</span>
+        Lista
+      </a>
+    </nav>
   </div>
 
-  <p class="prototype-note">Prototype BonAcheter — naviguez par les liens. Ouvrez <code>index.html</code> dans un navigateur. Taille mobile recommandée (375px).</p>
+  <p class="prototype-note">Protótipo BonAcheter — interface em <strong>português (Brasil)</strong>; navegação por âncoras. Abra <code>mockup/index.html</code> localmente. Largura tipo iPhone (~390px). Impostos: ver <a href="../docs/architecture/consumption-taxes-quebec.md">docs/architecture/consumption-taxes-quebec.md</a>.</p>
 
-      <script>
-    (function() {
-      var hash = window.location.hash || '#screen-landing';
-      function showScreen(id) {
-        document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
-        var el = document.getElementById(id);
-        if (el) el.classList.add('active');
+  <script>
+(function () {
+  var tabBar = document.getElementById("tab-bar");
+  var tabDashboard = document.getElementById("tab-dashboard");
+  var tabList = document.getElementById("tab-list");
+  var mainTabIds = { "screen-dashboard": true, "screen-list": true };
+
+  function showScreen(id) {
+    document.querySelectorAll(".screen").forEach(function (s) {
+      s.classList.toggle("active", s.id === id);
+    });
+    if (tabBar) {
+      var isMain = !!mainTabIds[id];
+      tabBar.classList.toggle("tab-bar--hidden", !isMain);
+      if (tabDashboard) tabDashboard.classList.toggle("active", id === "screen-dashboard");
+      if (tabList) tabList.classList.toggle("active", id === "screen-list");
+    }
+  }
+
+  function onHash() {
+    var raw = window.location.hash.slice(1);
+    var id = raw.split("&")[0];
+    if (!id || !document.getElementById(id)) id = "screen-landing";
+    showScreen(id);
+  }
+
+  window.addEventListener("hashchange", onHash);
+  onHash();
+
+  var listStrip = document.getElementById("list-budget-strip");
+  if (listStrip) {
+    listStrip.addEventListener("click", function () {
+      window.location.hash = "#screen-budget";
+    });
+    listStrip.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.location.hash = "#screen-budget";
       }
-      window.addEventListener('hashchange', function() { showScreen(window.location.hash.slice(1)); });
-      showScreen(hash.slice(1));
-      var budgetBar = document.querySelector('.budget-bar');
-      if (budgetBar) budgetBar.addEventListener('click', function() { window.location.hash = '#screen-budget'; });
-    })();
+    });
+  }
+
+  var taxSeg = document.getElementById("tax-seg");
+  var taxSourceText = document.getElementById("tax-source-text");
+  if (taxSeg && taxSourceText) {
+    taxSeg.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        taxSeg.querySelectorAll("button").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var mode = btn.getAttribute("data-tax");
+        if (mode === "taxable") {
+          taxSourceText.textContent =
+            "Escolha manual — linha tributável: GST+QST simplificados a 14,98 % no app (veja a tela de fontes).";
+        } else {
+          taxSourceText.textContent =
+            "Escolha manual — alimento básico indicativo a 0 %; confira exceções (bebidas, formato etc.) no Revenu Québec.";
+        }
+      });
+    });
+  }
+
+  var budSeg = document.getElementById("budget-period-seg");
+  if (budSeg) {
+    budSeg.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        budSeg.querySelectorAll("button").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+      });
+    });
+  }
+
+  var commToggle = document.getElementById("toggle-community");
+  if (commToggle) {
+    commToggle.addEventListener("click", function () {
+      var on = commToggle.classList.toggle("on");
+      commToggle.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+})();
   </script>
 </body>
 </html>

@@ -2,6 +2,9 @@
 //  RecordPurchaseView.swift
 //  BonAcheter
 //
+//  Tax note: uses a single combined factor (0.1498) on taxable lines for budget estimation, not the
+//  full GST+QST cascade from Revenu Québec. See `docs/architecture/consumption-taxes-quebec.md`.
+//
 
 import SwiftUI
 
@@ -16,6 +19,7 @@ struct RecordPurchaseView: View {
     @State private var prices: [UUID: String] = [:]
     @State private var showCommunityConsent = false
     @State private var pendingCommunityEntries: [PriceHistoryEntry] = []
+    @State private var taxDetailExpanded = false
     
     var selectedItems: [ListItem] {
         appState.listItems.filter { selectedIds.contains($0.id) }
@@ -33,6 +37,17 @@ struct RecordPurchaseView: View {
             return sum + (item.isTaxable ? p * 0.1498 : 0)
         }
     }
+    
+    /// Sum of entered prices on lines marked taxable (same base as illustrative GST/QST split).
+    var taxableSubtotal: Double {
+        selectedItems.reduce(0) { sum, item in
+            let p = Double(prices[item.id] ?? "0") ?? 0
+            return sum + (item.isTaxable ? p : 0)
+        }
+    }
+    
+    var illustrativeGst: Double { taxableSubtotal * 0.05 }
+    var illustrativeQst: Double { taxableSubtotal * 0.09975 }
     
     var total: Double { subtotal + taxAmount }
     
@@ -102,6 +117,17 @@ struct RecordPurchaseView: View {
             Section(s.recordRecap) {
                 HStack { Text(s.recordSubtotal); Spacer(); Text(String(format: "%.2f $", subtotal)) }
                 HStack { Text(s.recordTaxes); Spacer(); Text(String(format: "%.2f $", taxAmount)) }
+                if taxableSubtotal > 0 {
+                    DisclosureGroup(isExpanded: $taxDetailExpanded) {
+                        HStack { Text(s.recordTaxGstLine); Spacer(); Text(String(format: "%.2f $", illustrativeGst)) }
+                        HStack { Text(s.recordTaxQstLine); Spacer(); Text(String(format: "%.2f $", illustrativeQst)) }
+                        Text(s.recordTaxDetailFootnote)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    } label: {
+                        Text(s.recordTaxDetailTitle)
+                    }
+                }
                 HStack {
                     Text(s.recordTotal)
                         .fontWeight(.semibold)

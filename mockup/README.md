@@ -1,26 +1,31 @@
-# Prototype BonAcheter (mockup)
+# Protótipo BonAcheter (mockup)
 
-Prototype HTML/CSS cliquable pour revue avant développement. Aucun outil payant requis.
+Protótipo HTML/CSS clicável. **Idioma da interface: português (Brasil).**
 
-## Comment l’ouvrir
+Documentação sobre limites fiscais (GST/QST, modelo do app vs. varejo): [`docs/architecture/consumption-taxes-quebec.md`](../docs/architecture/consumption-taxes-quebec.md).
 
-1. Ouvrir `index.html` dans un navigateur (double-clic ou `open index.html` dans le terminal).
-2. Pour une vue « téléphone », réduire la largeur de la fenêtre (ou utiliser les DevTools en mode mobile, 375px).
+## Como abrir
 
-## Navigation
+1. Abrir `index.html` no navegador (duplo clique ou `open mockup/index.html` a partir da pasta do projeto).
+2. Para visualização tipo telefone, reduzir a largura da janela ou usar DevTools em modo mobile (~390px).
 
-- **Landing** : « Commencer » → Onboarding ; « J'ai déjà un compte » → Dashboard.
-- **Dashboard** : « Ma liste », « Budget », « Dernière course », « Paramètres ».
-- **Onboarding** : Langue → Foyer (créer/rejoindre) → Région → Dashboard.
-- **Liste** : Cliquer sur la barre de budget pour aller à l’écran Budget ; « + Ajouter un article » → formulaire ; « J’ai fait les courses » → enregistrer une course.
-- **Ajouter un article** : « Scanner code-barres » → Scanner (mock) ; « Enregistrer » → Liste.
-- **Budget / Enregistrer course / Paramètres** : « ← » ou « Enregistrer » → Dashboard. Déconnexion → Landing.
+## Navegação
 
-## Fichiers
+- **Abertura:** « Começar » → onboarding; « Já tenho uma conta » → painel (com abas **Início** / **Lista**).
+- **Abas:** visíveis só em `#screen-dashboard` e `#screen-list`.
+- **Painel:** orçamento, acesso rápido (lista, orçamento, última compra, ajustes).
+- **Onboarding:** idioma → lar → região → painel.
+- **Lista:** faixa de orçamento (clique) → orçamento; itens → histórico de preços; adicionar / registrar compra.
+- **Novo item:** código de barras Open Food Facts, imposto, **origem da categoria**, detalhe expansível, link **Fontes dos impostos (Québec)**.
+- **Fontes dos impostos** (`#screen-tax-info`): GST/QST, `isTaxable`, links Revenu Québec / ARC e link para o doc de arquitetura.
+- **Registrar compra:** detalhe expansível GST/QST (estimativa).
+- **Ajustes:** conta (wireframe), idioma, unidades, lar, comunidade, **referências fiscais** + doc do repositório.
 
-- `index.html` : toutes les écrans et la navigation par hash (`#screen-*`).
-- `styles.css` : styles (mobile-first, thème vert Québec).
+## Ficheiros
 
-## Spécifications détaillées
+- `index.html` — ecrãs e navegação por hash (`#screen-*`).
+- `styles.css` — mobile-first, tema verde (#0d5c2e).
 
-Voir `docs/design/personas-flows.md` et `docs/design/screens.md` dans le repo.
+## Especificações
+
+Ver `docs/design/personas-flows.md` e `docs/design/screens.md`.

@@ -4,6 +4,9 @@
 //
 //  Open Food Facts API — https://openfoodfacts.github.io/openfoodfacts-server/api/
 //
+//  Tax note: `suggestedTaxable` is a Québec-oriented heuristic on OFF category tags, not a legal
+//  classification. See `docs/architecture/consumption-taxes-quebec.md` for limits vs Revenu Québec / ARC.
+//
 
 import Foundation
 

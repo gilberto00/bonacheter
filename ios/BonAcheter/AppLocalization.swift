@@ -181,6 +181,152 @@ struct AppStrings {
     var addItemSave: String { t(en: "Save", fr: "Enregistrer", pt: "Salvar", es: "Guardar") }
     var addItemNewDefaultName: String { t(en: "New item", fr: "Nouvel article", pt: "Novo item", es: "Artículo nuevo") }
     
+    var addItemTaxOriginTitle: String {
+        t(en: "Category origin", fr: "Origine de la catégorie", pt: "Origem da categoria", es: "Origen de la categoría")
+    }
+    func addItemTaxOriginBody(source: TaxCategorySource, isTaxable: Bool) -> String {
+        switch source {
+        case .manual:
+            if isTaxable {
+                return t(
+                    en: "Manual choice — taxable line: GST+QST simplified to 14.98% in the app (see Tax sources).",
+                    fr: "Choix manuel — ligne taxable : TPS + TVQ simplifiées à 14,98 % dans l’app (voir Sources fiscales).",
+                    pt: "Escolha manual — linha tributável: GST+QST simplificados a 14,98% no app (veja Fontes fiscais).",
+                    es: "Elección manual: línea gravable; GST+QST simplificados al 14,98% en la app (ver Fuentes fiscales)."
+                )
+            }
+            return t(
+                en: "Manual choice — basic grocery at 0%; check exceptions (beverages, format, etc.) on Revenu Québec.",
+                fr: "Choix manuel — aliment de base à 0 % ; vérifiez les exceptions (boissons, format, etc.) sur Revenu Québec.",
+                pt: "Escolha manual — alimento básico a 0%; confira exceções (bebidas, formato etc.) no Revenu Québec.",
+                es: "Elección manual: alimento básico al 0%; revise excepciones en Revenu Québec."
+            )
+        case .openFoodFacts:
+            return t(
+                en: "Open Food Facts estimate — product categories (Québec heuristic, not legal advice).",
+                fr: "Estimation Open Food Facts — catégories produit (heuristique Québec, pas un avis fiscal).",
+                pt: "Estimativa Open Food Facts — categorias do produto (heurística Québec; não é assessoria fiscal).",
+                es: "Estimación Open Food Facts — categorías (heurística; no es asesoramiento fiscal)."
+            )
+        case .appDefault:
+            return t(
+                en: "App default when no other source is available.",
+                fr: "Valeur par défaut de l’app lorsque aucune autre source n’est disponible.",
+                pt: "Valor padrão do app quando não há outra fonte.",
+                es: "Valor por defecto de la app cuando no hay otra fuente."
+            )
+        }
+    }
+    var addItemTaxDisclaimer: String {
+        t(
+            en: "Indicative only — not tax advice. If in doubt, consult Revenu Québec or the CRA.",
+            fr: "Indicatif seulement — pas un avis fiscal. En cas de doute, consultez Revenu Québec ou l’ARC.",
+            pt: "Apenas indicativo — não substitui orientação fiscal. Em dúvida, consulte Revenu Québec ou a ARC.",
+            es: "Solo orientativo; no es asesoramiento fiscal. Consulte Revenu Québec o la ARC."
+        )
+    }
+    var addItemTaxHowTitle: String {
+        t(en: "How this category is set", fr: "Comment cette catégorie est déterminée", pt: "Como essa categoria é definida", es: "Cómo se define esta categoría")
+    }
+    var addItemTaxHowBody: String {
+        t(
+            en: "Your picker choice, an Open Food Facts suggestion after scan or lookup, or an app default. The app stores isTaxable only — not full legal detail per item.",
+            fr: "Votre choix dans le sélecteur, une suggestion Open Food Facts après scan ou recherche, ou une valeur par défaut. L’app enregistre seulement isTaxable.",
+            pt: "Sua escolha no controle, sugestão do Open Food Facts após leitura ou busca, ou padrão do app. O app guarda só isTaxable — não o detalhe legal por item.",
+            es: "Su elección, sugerencia de Open Food Facts o valor por defecto. La app solo guarda isTaxable."
+        )
+    }
+    var addItemTaxSourcesLink: String {
+        t(en: "GST/QST details & official links", fr: "TPS/TVQ et liens officiels", pt: "GST/QST e links oficiais", es: "GST/QST y enlaces oficiales")
+    }
+    
+    func listTaxSourceBadge(_ source: TaxCategorySource?) -> String? {
+        guard let source else { return nil }
+        switch source {
+        case .manual:
+            return t(en: "Manual choice", fr: "Choix manuel", pt: "Escolha manual", es: "Elección manual")
+        case .openFoodFacts:
+            return t(en: "Estim. Open Food Facts", fr: "Estim. Open Food Facts", pt: "Estim. Open Food Facts", es: "Estim. Open Food Facts")
+        case .appDefault:
+            return t(en: "App default", fr: "Défaut app", pt: "Padrão do app", es: "Predeterminado")
+        }
+    }
+    
+    var taxSourcesTitle: String {
+        t(en: "Tax sources (Québec)", fr: "Sources fiscales (Québec)", pt: "Fontes fiscais (Québec)", es: "Fuentes fiscales (Québec)")
+    }
+    var taxSourcesIntro1: String {
+        t(
+            en: "Taxable lines use one rounded factor (0.1498) in the app for budgeting. Official GST and QST follow Revenu Québec point-of-sale rules.",
+            fr: "Les lignes taxables utilisent un facteur arrondi (0,1498) dans l’app. La TPS et la TVQ officielles suivent Revenu Québec.",
+            pt: "Linhas tributáveis usam um fator arredondado (0,1498) no app. GST e QST oficiais seguem o Revenu Québec.",
+            es: "Las líneas gravables usan 0,1498 en la app. La GST y QST oficiales siguen a Revenu Québec."
+        )
+    }
+    var taxSourcesIntro2: String {
+        t(
+            en: "The taxable flag may come from your choice, Open Food Facts categories, or an app default — not a barcode certification.",
+            fr: "La catégorie peut venir de votre choix, des catégories Open Food Facts ou d’un défaut — pas une certification par code-barres.",
+            pt: "A categoria pode vir da sua escolha, das categorias Open Food Facts ou do padrão — não é certificação por código de barras.",
+            es: "La categoría puede venir de su elección, Open Food Facts o un predeterminado."
+        )
+    }
+    var taxSourcesDocFooter: String {
+        t(
+            en: "See also the repo doc consumption-taxes-quebec.md",
+            fr: "Voir aussi consumption-taxes-quebec.md dans le dépôt",
+            pt: "Veja também consumption-taxes-quebec.md no repositório",
+            es: "Vea también consumption-taxes-quebec.md en el repositorio"
+        )
+    }
+    
+    var recordTaxDetailTitle: String {
+        t(en: "Tax detail (illustrative)", fr: "Détail des taxes (indicatif)", pt: "Detalhe dos impostos (ilustrativo)", es: "Detalle de impuestos (ilustrativo)")
+    }
+    var recordTaxGstLine: String { t(en: "GST 5% (taxable base)", fr: "TPS 5 % (base taxable)", pt: "GST 5% (base tributável)", es: "GST 5% (base gravable)") }
+    var recordTaxQstLine: String { t(en: "QST 9.975% (same base, illustrative)", fr: "TVQ 9,975 % (même base, indicatif)", pt: "QST 9,975% (mesma base, ilustrativo)", es: "QST 9,975% (misma base, ilustrativo)") }
+    var recordTaxDetailFootnote: String {
+        t(
+            en: "The app totals tax with 0.1498 per line; GST+QST shown here split the same base for reference. Cash register rules may differ.",
+            fr: "L’app totalise avec 0,1498 ; le détail TPS/TVQ est indicatif. Le caisse peut différer.",
+            pt: "O app totaliza com 0,1498; GST+QST aqui dividem a mesma base só como referência. O caixa pode diferir.",
+            es: "La app usa 0,1498; el desglose es orientativo."
+        )
+    }
+    
+    var settingsTaxReferences: String {
+        t(en: "Tax references (Québec)", fr: "Références fiscales (Québec)", pt: "Referências fiscais (Québec)", es: "Referencias fiscales (Québec)")
+    }
+    var settingsTaxReferencesFootnote: String {
+        t(
+            en: "Official pages to verify tax-exempt vs taxable foods — not applied live in the app.",
+            fr: "Pages officielles — le prototype n’applique pas ces règles en temps réel.",
+            pt: "Páginas oficiais — o app não aplica essas regras em tempo real.",
+            es: "Páginas oficiales; la app no aplica estas reglas en vivo."
+        )
+    }
+    var linkRevenuQuebecHome: String { t(en: "Revenu Québec — home", fr: "Revenu Québec — accueil", pt: "Revenu Québec — início", es: "Revenu Québec — inicio") }
+    var linkRqCalculatingTaxes: String {
+        t(en: "Calculating GST and QST (RQ)", fr: "Calcul des taxes (RQ)", pt: "Cálculo de impostos (RQ)", es: "Cálculo de impuestos (RQ)")
+    }
+    var linkRevenuQuebecGroceryStores: String {
+        t(
+            en: "Groceries & convenience stores (RQ)",
+            fr: "Épiceries et dépanneurs (RQ)",
+            pt: "Mercearias (RQ)",
+            es: "Tiendas de comestibles (RQ)"
+        )
+    }
+    var linkRevenuQuebecFood: String {
+        t(
+            en: "Food — taxable or zero-rated",
+            fr: "Alimentation — produits taxables ou détaxés",
+            pt: "Alimentação — tributados ou isentos",
+            es: "Alimentación — gravados o exentos"
+        )
+    }
+    var linkCraHome: String { t(en: "Canada Revenue Agency", fr: "Agence du revenu du Canada", pt: "Agência da Receita do Canadá", es: "Agencia de ingresos de Canadá") }
+    
     func measurementSystemLabel(_ system: GroceryMeasurementSystem) -> String {
         switch system {
         case .metricBrazilCanada:

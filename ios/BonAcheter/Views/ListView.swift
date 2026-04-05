@@ -81,7 +81,10 @@ struct ListView: View {
     }
     
     private func listItemSubtitle(s: AppStrings, item: ListItem) -> String {
-        let base = "\(item.quantity) \(s.unitLabel(item.unit)) · \(s.listTaxLine(isTaxable: item.isTaxable))"
+        var base = "\(item.quantity) \(s.unitLabel(item.unit)) · \(s.listTaxLine(isTaxable: item.isTaxable))"
+        if let badge = s.listTaxSourceBadge(item.taxCategorySource) {
+            base += " · " + badge
+        }
         if let bc = item.barcode, !bc.isEmpty {
             return base + "\n" + s.listBarcodeLine(bc)
         }
