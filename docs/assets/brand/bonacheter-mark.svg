@@ -1,15 +1,40 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="128" fill="#F4F7FB"/>
-  <rect x="48" y="48" width="416" height="416" rx="112" fill="url(#paint0_linear)"/>
-  <circle cx="256" cy="208" r="120" fill="#FFFFFF" fill-opacity="0.08"/>
-  <path d="M162 190C162 138.085 204.085 96 256 96C307.915 96 350 138.085 350 190V204H309V190C309 160.729 285.271 137 256 137C226.729 137 203 160.729 203 190V204H162V190Z" fill="#DCE8FD"/>
-  <path d="M120 215.273C120 190.822 139.822 171 164.273 171H347.727C372.178 171 392 190.822 392 215.273V311.364C392 367.49 346.49 413 290.364 413H221.636C165.51 413 120 367.49 120 311.364V215.273Z" fill="#FFFFFF"/>
-  <path d="M256 224H222V360H256C318.961 360 364 335.616 364 293.455C364 264.11 342.038 245.373 312.364 237.818C326.267 230.718 336 219.51 336 202.909C336 168.569 303.423 151 256 151H222V187H252.818C279.963 187 294 193.794 294 208.364C294 223.718 278.194 231 249.182 231H256V224ZM263.091 264C301.751 264 321 273.43 321 291.818C321 310.818 301.06 321 263.455 321H256V264H263.091Z" fill="#003DA5"/>
-  <path d="M222 151H252.818C279.963 151 294 157.794 294 172.364C294 187.718 278.194 195 249.182 195H222V151Z" fill="#003DA5"/>
   <defs>
-    <linearGradient id="paint0_linear" x1="84" y1="72" x2="432" y2="440" gradientUnits="userSpaceOnUse">
+    <linearGradient id="qcBg" x1="72" y1="56" x2="448" y2="456" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0D56CF"/>
       <stop offset="1" stop-color="#003DA5"/>
     </linearGradient>
   </defs>
+  <rect width="512" height="512" rx="120" fill="url(#qcBg)"/>
+  <!-- Sacola branca: asa + corpo -->
+  <path
+    fill="white"
+    d="M176 214
+       C176 168 208 136 256 136
+       C304 136 336 168 336 214
+       L336 218
+       L352 218
+       C374 218 392 236 392 258
+       L392 384
+       C392 406 374 424 352 424
+       L160 424
+       C138 424 120 406 120 384
+       L120 258
+       C120 236 138 218 160 218
+       L176 218
+       L176 214Z"
+  />
+  <!-- Linhas de lista (lista partilhada) -->
+  <rect x="168" y="248" width="176" height="12" rx="6" fill="#003DA5" fill-opacity="0.28"/>
+  <rect x="168" y="270" width="176" height="12" rx="6" fill="#003DA5" fill-opacity="0.28"/>
+  <rect x="192" y="292" width="128" height="12" rx="6" fill="#003DA5" fill-opacity="0.28"/>
+  <text
+    x="256"
+    y="362"
+    text-anchor="middle"
+    font-family="Arial Rounded MT Bold, Arial Rounded, Arial, sans-serif"
+    font-size="168"
+    font-weight="700"
+    fill="#003DA5"
+  >B</text>
 </svg>
