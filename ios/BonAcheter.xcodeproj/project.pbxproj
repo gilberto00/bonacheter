@@ -41,6 +41,7 @@
 		A1000030 /* MailComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000030 /* MailComposeView.swift */; };
 		A1000031 /* TaxSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000034 /* TaxSourcesView.swift */; };
 		A1000201 /* BonAcheterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000201 /* BonAcheterUITests.swift */; };
+		A1000202 /* AppStoreScreenshotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000202 /* AppStoreScreenshotsUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		B1000033 /* BonAcheterDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonAcheterDebug.entitlements; sourceTree = "<group>"; };
 		B1000200 /* BonAcheterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAcheterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1000201 /* BonAcheterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAcheterUITests.swift; sourceTree = "<group>"; };
+		B1000202 /* AppStoreScreenshotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotsUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B1000201 /* BonAcheterUITests.swift */,
+				B1000202 /* AppStoreScreenshotsUITests.swift */,
 			);
 			path = BonAcheterUITests;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000201 /* BonAcheterUITests.swift in Sources */,
+				A1000202 /* AppStoreScreenshotsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
